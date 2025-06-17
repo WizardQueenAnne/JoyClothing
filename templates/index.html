@@ -26,8 +26,6 @@
             --background-light: #f8fafc;
             --border-light: #e2e8f0;
             --success: #10b981;
-            --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-light));
-            --gradient-secondary: linear-gradient(135deg, var(--accent), #fbbf24);
             --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             --space-xs: 0.5rem;
             --space-sm: 1rem;
@@ -58,7 +56,6 @@
             line-height: 1.6;
             color: var(--text-dark);
             background: var(--background);
-            overflow-x: hidden;
         }
 
         .container {
@@ -82,7 +79,6 @@
 
         .navbar.scrolled {
             box-shadow: var(--shadow-lg);
-            background: rgba(255, 255, 255, 0.98);
         }
 
         .nav-container {
@@ -102,7 +98,7 @@
         .brand-name {
             font-size: 1.75rem;
             font-weight: 800;
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -132,7 +128,6 @@
             transition: var(--transition);
             padding: var(--space-xs) var(--space-sm);
             border-radius: var(--radius-md);
-            position: relative;
         }
 
         .nav-link:hover,
@@ -178,16 +173,18 @@
             justify-content: center;
             font-size: 0.75rem;
             font-weight: 600;
+            opacity: 0;
             transform: scale(0);
             transition: var(--transition);
         }
 
         .cart-count.show {
+            opacity: 1;
             transform: scale(1);
         }
 
         .cta-button {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             color: white;
             border: none;
             padding: var(--space-sm) var(--space-lg);
@@ -221,16 +218,7 @@
             padding-top: 120px;
             display: flex;
             align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--space-lg);
-            position: relative;
-            z-index: 1;
+            padding-bottom: var(--space-3xl);
         }
 
         .hero-content {
@@ -257,11 +245,6 @@
             width: fit-content;
         }
 
-        .hero-badge::before {
-            content: '😄';
-            font-size: 1rem;
-        }
-
         .hero-title {
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 800;
@@ -271,7 +254,7 @@
         }
 
         .text-highlight {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -309,7 +292,7 @@
         }
 
         .btn-primary {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             color: white;
         }
 
@@ -342,7 +325,7 @@
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -412,7 +395,7 @@
         }
 
         .phrase-category {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             color: white;
             padding: var(--space-xs) var(--space-md);
             border-radius: var(--radius-full);
@@ -446,10 +429,9 @@
             background: var(--primary-light);
         }
 
-        /* Products Section */
+        /* Section Styles */
         .section {
             padding: var(--space-3xl) 0;
-            position: relative;
         }
 
         .products {
@@ -481,7 +463,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 5px;
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             border-radius: var(--radius-full);
         }
 
@@ -524,7 +506,7 @@
         }
 
         .tab-btn.active {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             border-color: var(--primary);
             color: white;
             box-shadow: var(--shadow-lg);
@@ -550,9 +532,7 @@
         }
 
         .product-card.hidden {
-            opacity: 0;
-            transform: translateY(20px);
-            pointer-events: none;
+            display: none;
         }
 
         .product-card:hover {
@@ -564,7 +544,7 @@
         .product-icon {
             width: 80px;
             height: 80px;
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -622,7 +602,7 @@
         }
 
         .btn-view {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             color: white;
             border: none;
             padding: var(--space-sm) var(--space-lg);
@@ -639,7 +619,7 @@
         }
 
         .btn-cart {
-            background: var(--gradient-secondary);
+            background: linear-gradient(135deg, var(--accent), #fbbf24);
             color: white;
             border: none;
             padding: var(--space-sm);
@@ -736,7 +716,7 @@
         .feature-icon {
             width: 80px;
             height: 80px;
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -796,7 +776,7 @@
         .illustration-icon {
             width: 100px;
             height: 100px;
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -899,7 +879,7 @@
         .contact-icon {
             width: 60px;
             height: 60px;
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -990,424 +970,6 @@
             right: 0;
         }
 
-        .cart-header {
-            padding: var(--space-lg);
-            border-bottom: 1px solid var(--border-light);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cart-header h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .close-cart {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--text-medium);
-            cursor: pointer;
-            padding: var(--space-xs);
-            border-radius: var(--radius-md);
-            transition: var(--transition);
-        }
-
-        .close-cart:hover {
-            background: var(--secondary);
-            color: var(--text-dark);
-        }
-
-        .cart-items {
-            padding: var(--space-lg);
-            flex: 1;
-        }
-
-        .cart-item {
-            display: flex;
-            gap: var(--space-md);
-            padding: var(--space-md);
-            border-radius: var(--radius-lg);
-            background: var(--background-light);
-            margin-bottom: var(--space-md);
-            transition: var(--transition);
-        }
-
-        .cart-item:hover {
-            box-shadow: var(--shadow-md);
-        }
-
-        .cart-item-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-primary);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-
-        .cart-item-details {
-            flex: 1;
-        }
-
-        .cart-item-name {
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: var(--space-xs);
-        }
-
-        .cart-item-phrase {
-            font-size: 0.875rem;
-            color: var(--text-medium);
-            font-style: italic;
-            margin-bottom: var(--space-xs);
-        }
-
-        .cart-item-price {
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .cart-item-actions {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-xs);
-        }
-
-        .quantity-controls {
-            display: flex;
-            align-items: center;
-            gap: var(--space-xs);
-        }
-
-        .qty-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 0.75rem;
-            transition: var(--transition);
-        }
-
-        .qty-btn:hover {
-            background: var(--primary-dark);
-        }
-
-        .qty-btn:disabled {
-            background: var(--text-light);
-            cursor: not-allowed;
-        }
-
-        .quantity {
-            font-weight: 600;
-            min-width: 20px;
-            text-align: center;
-        }
-
-        .remove-item {
-            background: none;
-            border: none;
-            color: var(--text-light);
-            cursor: pointer;
-            font-size: 0.875rem;
-            transition: var(--transition);
-        }
-
-        .remove-item:hover {
-            color: #ef4444;
-        }
-
-        .cart-empty {
-            text-align: center;
-            color: var(--text-medium);
-            padding: var(--space-2xl);
-        }
-
-        .cart-empty i {
-            font-size: 3rem;
-            margin-bottom: var(--space-md);
-            color: var(--text-light);
-        }
-
-        .cart-footer {
-            padding: var(--space-lg);
-            border-top: 1px solid var(--border-light);
-            background: var(--background-light);
-        }
-
-        .cart-total {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: var(--space-lg);
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
-        .checkout-btn {
-            width: 100%;
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            padding: var(--space-md);
-            border-radius: var(--radius-lg);
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .checkout-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .checkout-btn:disabled {
-            background: var(--text-light);
-            transform: none;
-            cursor: not-allowed;
-        }
-
-        /* Product Modal */
-        .product-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 3000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .product-modal.open {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: var(--radius-2xl);
-            max-width: 800px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            transform: translateY(50px);
-            transition: var(--transition);
-        }
-
-        .product-modal.open .modal-content {
-            transform: translateY(0);
-        }
-
-        .modal-header {
-            padding: var(--space-lg);
-            border-bottom: 1px solid var(--border-light);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .modal-header h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .close-modal {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--text-medium);
-            cursor: pointer;
-            padding: var(--space-xs);
-            border-radius: var(--radius-md);
-            transition: var(--transition);
-        }
-
-        .close-modal:hover {
-            background: var(--secondary);
-            color: var(--text-dark);
-        }
-
-        .modal-body {
-            padding: var(--space-lg);
-        }
-
-        .product-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-xl);
-            align-items: start;
-        }
-
-        .product-image-placeholder {
-            aspect-ratio: 1;
-            background: var(--gradient-primary);
-            border-radius: var(--radius-xl);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4rem;
-        }
-
-        .product-info h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: var(--space-md);
-        }
-
-        .product-description {
-            color: var(--text-medium);
-            line-height: 1.7;
-            margin-bottom: var(--space-lg);
-            font-size: 1.1rem;
-        }
-
-        .product-phrase-modal {
-            font-style: italic;
-            font-size: 1.25rem;
-            color: var(--text-dark);
-            background: var(--secondary);
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            margin-bottom: var(--space-lg);
-            text-align: center;
-            border-left: 4px solid var(--primary);
-        }
-
-        .product-price-modal {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: var(--space-lg);
-        }
-
-        .product-features {
-            margin-bottom: var(--space-lg);
-        }
-
-        .product-features h4 {
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: var(--space-md);
-        }
-
-        .feature-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-sm);
-        }
-
-        .feature-list li {
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-            color: var(--text-medium);
-        }
-
-        .feature-list li::before {
-            content: '✓';
-            color: var(--success);
-            font-weight: bold;
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: var(--space-md);
-        }
-
-        .btn-add-to-cart {
-            flex: 1;
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            padding: var(--space-md) var(--space-lg);
-            border-radius: var(--radius-lg);
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .btn-add-to-cart:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-buy-now {
-            background: var(--gradient-secondary);
-            color: white;
-            border: none;
-            padding: var(--space-md) var(--space-lg);
-            border-radius: var(--radius-lg);
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .btn-buy-now:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Animations */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .fade-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .fade-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Cart overlay */
         .cart-overlay {
             position: fixed;
             top: 0;
@@ -1428,14 +990,9 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .container {
-                padding: 0 var(--space-md);
-            }
-            
             .hero-content,
             .about-content,
-            .contact-content,
-            .product-details {
+            .contact-content {
                 grid-template-columns: 1fr;
                 gap: var(--space-2xl);
                 text-align: center;
@@ -1448,31 +1005,11 @@
             .features {
                 text-align: left;
             }
-
-            .cart-sidebar {
-                width: 350px;
-                right: -350px;
-            }
         }
 
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                padding: var(--space-lg);
-                gap: var(--space-sm);
-                border-top: 1px solid var(--border-light);
-                box-shadow: var(--shadow-lg);
-            }
-
-            .nav-menu.active {
-                display: flex;
             }
 
             .mobile-menu-toggle {
@@ -1488,6 +1025,8 @@
             .hero-stats {
                 justify-content: center;
                 gap: var(--space-xl);
+                flex-direction: column;
+                align-items: center;
             }
 
             .hero-buttons {
@@ -1501,12 +1040,6 @@
                 max-width: 280px;
             }
 
-            .hero-stats {
-                flex-direction: column;
-                gap: var(--space-lg);
-                align-items: center;
-            }
-
             .feature {
                 flex-direction: column;
                 text-align: center;
@@ -1517,46 +1050,15 @@
                 transform: translateY(-5px);
             }
 
-            .contact-methods {
-                gap: var(--space-md);
-            }
-
-            .contact-method {
-                padding: var(--space-md);
-                gap: var(--space-md);
-            }
-
-            .contact-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-            }
-
             .cart-sidebar {
                 width: 100%;
                 right: -100%;
-            }
-
-            .product-details {
-                grid-template-columns: 1fr;
-            }
-
-            .modal-actions {
-                flex-direction: column;
             }
         }
 
         @media (max-width: 480px) {
             .section {
                 padding: var(--space-xl) 0;
-            }
-
-            .nav-container {
-                padding: var(--space-sm) var(--space-md);
-            }
-
-            .hero-container {
-                padding: 0 var(--space-md);
             }
 
             .category-tabs {
@@ -1572,26 +1074,6 @@
                 grid-template-columns: 1fr;
                 gap: var(--space-lg);
             }
-
-            .product-card {
-                padding: var(--space-lg);
-            }
-        }
-
-        /* Focus styles for accessibility */
-        .btn:focus,
-        .nav-link:focus,
-        .cta-button:focus,
-        .contact-method:focus,
-        .product-card:focus,
-        .tab-btn:focus,
-        .phrase-display:focus,
-        .showcase-dot:focus,
-        .cart-button:focus,
-        .close-cart:focus,
-        .close-modal:focus {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
         }
     </style>
 </head>
@@ -1600,13 +1082,13 @@
     <div class="cart-overlay" id="cartOverlay"></div>
 
     <!-- Navigation -->
-    <nav class="navbar" role="navigation">
+    <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
                 <span class="brand-name">PrintsByPeter</span>
                 <span class="brand-tagline">Hilarious & Ethical</span>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <button class="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-menu">
@@ -1616,7 +1098,7 @@
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <button class="cart-button" id="cartButton" aria-label="Shopping cart">
+                <button class="cart-button" id="cartButton">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count" id="cartCount">0</span>
                 </button>
@@ -1627,33 +1109,35 @@
 
     <!-- Cart Sidebar -->
     <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Shopping Cart</h3>
-            <button class="close-cart" id="closeCart" aria-label="Close cart">
+        <div style="padding: 1rem; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="margin: 0; font-size: 1.5rem; font-weight: 700;">Shopping Cart</h3>
+            <button id="closeCart" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; padding: 0.5rem;">
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        <div class="cart-items" id="cartItems">
-            <div class="cart-empty" id="cartEmpty">
-                <i class="fas fa-shopping-cart"></i>
+        <div id="cartItems" style="padding: 1rem; flex: 1;">
+            <div style="text-align: center; color: #64748b; padding: 2rem;">
+                <i class="fas fa-shopping-cart" style="font-size: 3rem; margin-bottom: 1rem; color: #94a3b8;"></i>
                 <p>Your cart is empty</p>
             </div>
         </div>
-        <div class="cart-footer" id="cartFooter" style="display: none;">
-            <div class="cart-total">
+        <div id="cartFooter" style="padding: 1rem; border-top: 1px solid #e2e8f0; background: #f8fafc; display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: 1.25rem; font-weight: 700;">
                 <span>Total: <span id="cartTotal">$0.00</span></span>
             </div>
-            <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+            <button id="checkoutBtn" style="width: 100%; background: linear-gradient(135deg, #6366f1, #818cf8); color: white; border: none; padding: 1rem; border-radius: 0.75rem; font-weight: 600; font-size: 1.1rem; cursor: pointer;">
+                Checkout
+            </button>
         </div>
     </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-container">
+        <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-badge">
-                        Hilarious & Ethically Made
+                        😄 Hilarious & Ethically Made
                     </div>
                     <h1 class="hero-title">
                         Hilarious Custom T-Shirts
@@ -1669,15 +1153,15 @@
                     </div>
                     <div class="hero-stats">
                         <div class="stat">
-                            <div class="stat-number" data-target="500">0</div>
+                            <div class="stat-number" id="stat1">500+</div>
                             <div class="stat-label">Witty Phrases</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number" data-target="15">0</div>
+                            <div class="stat-number" id="stat2">15+</div>
                             <div class="stat-label">Product Types</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number" data-target="100">0</div>
+                            <div class="stat-number" id="stat3">100%</div>
                             <div class="stat-label">Ethically Made</div>
                         </div>
                     </div>
@@ -1702,10 +1186,10 @@
                         </div>
                     </div>
                     <div class="showcase-controls">
-                        <button class="showcase-dot active" data-index="0"></button>
-                        <button class="showcase-dot" data-index="1"></button>
-                        <button class="showcase-dot" data-index="2"></button>
-                        <button class="showcase-dot" data-index="3"></button>
+                        <button class="showcase-dot active"></button>
+                        <button class="showcase-dot"></button>
+                        <button class="showcase-dot"></button>
+                        <button class="showcase-dot"></button>
                     </div>
                 </div>
             </div>
@@ -1715,13 +1199,13 @@
     <!-- Products Section -->
     <section id="products" class="section products">
         <div class="container">
-            <div class="section-header fade-up">
+            <div class="section-header">
                 <h2 class="section-title">Browse by Category</h2>
                 <p class="section-subtitle">Find the perfect item for your witty phrase</p>
             </div>
             
             <!-- Category Tabs -->
-            <div class="category-tabs fade-up">
+            <div class="category-tabs">
                 <button class="tab-btn active" data-category="all">All Products</button>
                 <button class="tab-btn" data-category="shirts">T-Shirts</button>
                 <button class="tab-btn" data-category="sweatshirts">Sweatshirts</button>
@@ -1730,8 +1214,8 @@
             </div>
 
             <!-- Product Grid -->
-            <div class="product-grid fade-up" id="productGrid">
-                <!-- Products will be dynamically loaded here -->
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be loaded here by JavaScript -->
             </div>
         </div>
     </section>
@@ -1740,7 +1224,7 @@
     <section id="about" class="section about">
         <div class="container">
             <div class="about-content">
-                <div class="about-text fade-left">
+                <div class="about-text">
                     <h2>Spreading Laughs, Ethically</h2>
                     <p class="lead-text">
                         We believe humor should also mean fair. Every laugh-inducing design is printed on ethically made, premium quality apparel.
@@ -1780,7 +1264,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-visual fade-right">
+                <div class="about-visual">
                     <div class="about-illustration">
                         <div class="illustration-content">
                             <div class="illustration-icon">
@@ -1803,12 +1287,12 @@
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
-            <div class="section-header fade-up">
+            <div class="section-header">
                 <h2 class="section-title">Get In Touch</h2>
                 <p class="section-subtitle">Ready to spread some laughs? Got a witty idea? Let's make it happen!</p>
             </div>
             <div class="contact-content">
-                <div class="contact-info fade-left">
+                <div class="contact-info">
                     <h3>Contact Information</h3>
                     <div class="contact-methods">
                         <div class="contact-method">
@@ -1842,23 +1326,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-visual fade-right">
+                <div class="contact-visual">
                     <div class="contact-illustration">
-                        <div class="illustration-content">
-                            <div class="illustration-icon">
-                                <i class="fas fa-comments"></i>
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #6366f1, #818cf8); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                            <i class="fas fa-comments" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Let's Create Something Great</h4>
+                        <p style="color: #64748b; line-height: 1.6; margin-bottom: 1.5rem;">Got a hilarious idea? We'd love to help bring your witty phrases to life on ethical apparel</p>
+                        <div class="contact-features">
+                            <div class="contact-feature">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Custom Ideas</span>
                             </div>
-                            <h4>Let's Create Something Great</h4>
-                            <p>Got a hilarious idea? We'd love to help bring your witty phrases to life on ethical apparel</p>
-                            <div class="contact-features">
-                                <div class="contact-feature">
-                                    <i class="fas fa-lightbulb"></i>
-                                    <span>Custom Ideas</span>
-                                </div>
-                                <div class="contact-feature">
-                                    <i class="fas fa-handshake"></i>
-                                    <span>Collaboration</span>
-                                </div>
+                            <div class="contact-feature">
+                                <i class="fas fa-handshake"></i>
+                                <span>Collaboration</span>
                             </div>
                         </div>
                     </div>
@@ -1867,362 +1349,122 @@
         </div>
     </section>
 
-    <!-- Product Modal -->
-    <div class="product-modal" id="productModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle">Product Details</h2>
-                <button class="close-modal" id="closeModal" aria-label="Close modal">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="product-details">
-                    <div class="product-image-placeholder" id="modalImage">
-                        <i class="fas fa-tshirt"></i>
-                    </div>
-                    <div class="product-info">
-                        <h3 id="modalProductName">Product Name</h3>
-                        <div class="product-phrase-modal" id="modalPhrase">
-                            "Placeholder Phrase"
-                        </div>
-                        <div class="product-price-modal" id="modalPrice">$24.99</div>
-                        <div class="product-description" id="modalDescription">
-                            Premium quality apparel with hilarious phrases that spread joy and laughter. 
-                            Made with sustainable materials and ethical labor practices.
-                        </div>
-                        <div class="product-features">
-                            <h4>Features:</h4>
-                            <ul class="feature-list">
-                                <li>100% ethically sourced materials</li>
-                                <li>Fair trade certified production</li>
-                                <li>Premium quality printing</li>
-                                <li>Comfortable and durable</li>
-                                <li>Machine washable</li>
-                            </ul>
-                        </div>
-                        <div class="modal-actions">
-                            <button class="btn-add-to-cart" id="modalAddToCart">Add to Cart</button>
-                            <button class="btn-buy-now" id="modalBuyNow">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Product data
-        const PRODUCT_DATA = [
-            { 
-                id: 1, 
-                category: 'shirts', 
-                type: 'Premium T-Shirt', 
-                phrase: '"Placeholder Phrase 1"', 
-                price: 24.99, 
-                icon: 'fas fa-tshirt',
-                description: 'Super soft premium cotton t-shirt perfect for everyday wear and maximum comfort.'
-            },
-            { 
-                id: 2, 
-                category: 'shirts', 
-                type: 'Classic Tee', 
-                phrase: '"Placeholder Phrase 2"', 
-                price: 22.99, 
-                icon: 'fas fa-tshirt',
-                description: 'Classic fit t-shirt made with premium materials for lasting comfort and style.'
-            },
-            { 
-                id: 3, 
-                category: 'shirts', 
-                type: 'Tank Top', 
-                phrase: '"Placeholder Phrase 3"', 
-                price: 19.99, 
-                icon: 'fas fa-vest',
-                description: 'Lightweight tank top perfect for summer days and workout sessions.'
-            },
-            { 
-                id: 4, 
-                category: 'shirts', 
-                type: 'Long Sleeve', 
-                phrase: '"Placeholder Phrase 4"', 
-                price: 26.99, 
-                icon: 'fas fa-tshirt',
-                description: 'Cozy long sleeve tee for cooler weather with the same great quality and humor.'
-            },
-            { 
-                id: 5, 
-                category: 'sweatshirts', 
-                type: 'Premium Hoodie', 
-                phrase: '"Placeholder Phrase 5"', 
-                price: 42.99, 
-                icon: 'fas fa-hoodie',
-                description: 'Ultra-soft hoodie with kangaroo pocket and adjustable drawstring hood.'
-            },
-            { 
-                id: 6, 
-                category: 'sweatshirts', 
-                type: 'Crewneck', 
-                phrase: '"Placeholder Phrase 6"', 
-                price: 38.99, 
-                icon: 'fas fa-tshirt',
-                description: 'Classic crewneck sweatshirt with ribbed cuffs and hem for a perfect fit.'
-            },
-            { 
-                id: 7, 
-                category: 'sweatshirts', 
-                type: 'Zip Hoodie', 
-                phrase: '"Placeholder Phrase 7"', 
-                price: 44.99, 
-                icon: 'fas fa-vest',
-                description: 'Convenient zip-up hoodie for easy layering and versatile style.'
-            },
-            { 
-                id: 8, 
-                category: 'hats', 
-                type: 'Baseball Cap', 
-                phrase: '"Placeholder Phrase 8"', 
-                price: 18.99, 
-                icon: 'fas fa-hat-wizard',
-                description: 'Classic baseball cap with adjustable strap and curved brim.'
-            },
-            { 
-                id: 9, 
-                category: 'hats', 
-                type: 'Snapback', 
-                phrase: '"Placeholder Phrase 9"', 
-                price: 21.99, 
-                icon: 'fas fa-hat-wizard',
-                description: 'Trendy snapback with flat brim and structured crown for urban style.'
-            },
-            { 
-                id: 10, 
-                category: 'hats', 
-                type: 'Beanie', 
-                phrase: '"Placeholder Phrase 10"', 
-                price: 16.99, 
-                icon: 'fas fa-hat-wizard',
-                description: 'Warm and cozy beanie perfect for cold weather and year-round style.'
-            },
-            { 
-                id: 11, 
-                category: 'accessories', 
-                type: 'Coffee Mug', 
-                phrase: '"Placeholder Phrase 11"', 
-                price: 12.99, 
-                icon: 'fas fa-mug-hot',
-                description: 'Ceramic coffee mug that will make your morning coffee even better.'
-            },
-            { 
-                id: 12, 
-                category: 'accessories', 
-                type: 'Phone Case', 
-                phrase: '"Placeholder Phrase 12"', 
-                price: 15.99, 
-                icon: 'fas fa-mobile-alt',
-                description: 'Durable phone case that protects your device while showing off your humor.'
-            },
-            { 
-                id: 13, 
-                category: 'accessories', 
-                type: 'Tote Bag', 
-                phrase: '"Placeholder Phrase 13"', 
-                price: 14.99, 
-                icon: 'fas fa-shopping-bag',
-                description: 'Spacious canvas tote bag perfect for groceries, books, or daily essentials.'
-            },
-            { 
-                id: 14, 
-                category: 'accessories', 
-                type: 'Sticker Pack', 
-                phrase: '"Placeholder Phrase 14"', 
-                price: 8.99, 
-                icon: 'fas fa-star',
-                description: 'Pack of 10 waterproof stickers to decorate your laptop, water bottle, or car.'
-            }
+        // Sample product data
+        const products = [
+            { id: 1, category: 'shirts', name: 'Premium T-Shirt', phrase: '"Placeholder Phrase 1"', price: 24.99, icon: 'fas fa-tshirt' },
+            { id: 2, category: 'shirts', name: 'Classic Tee', phrase: '"Placeholder Phrase 2"', price: 22.99, icon: 'fas fa-tshirt' },
+            { id: 3, category: 'shirts', name: 'Tank Top', phrase: '"Placeholder Phrase 3"', price: 19.99, icon: 'fas fa-vest' },
+            { id: 4, category: 'shirts', name: 'Long Sleeve', phrase: '"Placeholder Phrase 4"', price: 26.99, icon: 'fas fa-tshirt' },
+            { id: 5, category: 'sweatshirts', name: 'Premium Hoodie', phrase: '"Placeholder Phrase 5"', price: 42.99, icon: 'fas fa-vest' },
+            { id: 6, category: 'sweatshirts', name: 'Crewneck', phrase: '"Placeholder Phrase 6"', price: 38.99, icon: 'fas fa-tshirt' },
+            { id: 7, category: 'sweatshirts', name: 'Zip Hoodie', phrase: '"Placeholder Phrase 7"', price: 44.99, icon: 'fas fa-vest' },
+            { id: 8, category: 'hats', name: 'Baseball Cap', phrase: '"Placeholder Phrase 8"', price: 18.99, icon: 'fas fa-hat-wizard' },
+            { id: 9, category: 'hats', name: 'Snapback', phrase: '"Placeholder Phrase 9"', price: 21.99, icon: 'fas fa-hat-wizard' },
+            { id: 10, category: 'hats', name: 'Beanie', phrase: '"Placeholder Phrase 10"', price: 16.99, icon: 'fas fa-hat-wizard' },
+            { id: 11, category: 'accessories', name: 'Coffee Mug', phrase: '"Placeholder Phrase 11"', price: 12.99, icon: 'fas fa-mug-hot' },
+            { id: 12, category: 'accessories', name: 'Phone Case', phrase: '"Placeholder Phrase 12"', price: 15.99, icon: 'fas fa-mobile-alt' },
+            { id: 13, category: 'accessories', name: 'Tote Bag', phrase: '"Placeholder Phrase 13"', price: 14.99, icon: 'fas fa-shopping-bag' },
+            { id: 14, category: 'accessories', name: 'Sticker Pack', phrase: '"Placeholder Phrase 14"', price: 8.99, icon: 'fas fa-star' }
         ];
 
-        // Global variables
-        let currentPhraseIndex = 0;
-        let phraseInterval;
-        let currentCategory = 'all';
         let cart = [];
-        let currentProduct = null;
+        let currentCategory = 'all';
+        let currentPhraseIndex = 0;
 
-        // Initialize everything when DOM is loaded
+        // Initialize when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            initializeScrollAnimations();
-            initializeNavigation();
+            loadProducts();
+            initializeTabs();
             initializePhraseCarousel();
-            initializeCategoryTabs();
-            initializeProductGrid();
-            initializeMobileMenu();
-            initializeButtons();
             initializeCart();
-            initializeModal();
-            initializeStatsCounter();
-            updateCartDisplay();
+            initializeNavigation();
+            animateStats();
         });
 
-        // Stats counter animation - starts immediately
-        function initializeStatsCounter() {
-            const statNumbers = document.querySelectorAll('.stat-number');
-            
-            const animateStats = () => {
-                statNumbers.forEach(stat => {
-                    const target = parseInt(stat.dataset.target);
-                    const increment = target / 50;
-                    let current = 0;
-                    
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(timer);
-                            if (target === 500) {
-                                stat.textContent = target + '+';
-                            } else if (target === 15) {
-                                stat.textContent = target + '+';
-                            } else if (target === 100) {
-                                stat.textContent = target + '%';
-                            }
-                        } else {
-                            stat.textContent = Math.floor(current);
-                        }
-                    }, 30);
-                });
-            };
+        // Load products into grid
+        function loadProducts() {
+            const productGrid = document.getElementById('productGrid');
+            productGrid.innerHTML = '';
 
-            // Start animation immediately
-            setTimeout(animateStats, 500);
-        }
-
-        // Scroll animations
-        function initializeScrollAnimations() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => {
-                observer.observe(el);
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.dataset.category = product.category;
+                
+                productCard.innerHTML = `
+                    <div class="product-icon">
+                        <i class="${product.icon}"></i>
+                    </div>
+                    <h3>${product.name}</h3>
+                    <div class="product-phrase">${product.phrase}</div>
+                    <div class="product-price">${product.price.toFixed(2)}</div>
+                    <div class="product-actions">
+                        <button class="btn-view" onclick="viewProduct(${product.id})">View Details</button>
+                        <button class="btn-cart" onclick="addToCart(${product.id})" title="Add to Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                    <div class="subcategory-tag">Ethically Made</div>
+                `;
+                
+                productGrid.appendChild(productCard);
             });
         }
 
-        // Navigation
-        function initializeNavigation() {
-            const navbar = document.querySelector('.navbar');
+        // Initialize category tabs
+        function initializeTabs() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
             
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    navbar.classList.add('scrolled');
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    
+                    // Update active tab
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter products
+                    filterProducts(category);
+                });
+            });
+        }
+
+        // Filter products by category
+        function filterProducts(category) {
+            const productCards = document.querySelectorAll('.product-card');
+            
+            productCards.forEach(card => {
+                const productCategory = card.dataset.category;
+                
+                if (category === 'all' || productCategory === category) {
+                    card.classList.remove('hidden');
                 } else {
-                    navbar.classList.remove('scrolled');
+                    card.classList.add('hidden');
                 }
             });
-
-            // Active section highlighting
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (window.scrollY >= (sectionTop - 200)) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            });
         }
 
-        // Mobile menu
-        function initializeMobileMenu() {
-            const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            if (mobileToggle) {
-                mobileToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                    const isActive = navMenu.classList.contains('active');
-                    const icon = mobileToggle.querySelector('i');
-                    icon.className = isActive ? 'fas fa-times' : 'fas fa-bars';
-                });
-            }
-
-            // Close menu when clicking nav links
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('active');
-                    const icon = mobileToggle.querySelector('i');
-                    if (icon) icon.className = 'fas fa-bars';
-                });
-            });
-        }
-
-        // Phrase carousel
+        // Initialize phrase carousel
         function initializePhraseCarousel() {
-            const phraseCards = document.querySelectorAll('.phrase-card');
             const dots = document.querySelectorAll('.showcase-dot');
             
-            if (phraseCards.length === 0 || dots.length === 0) return;
-            
-            // Dot click handlers
             dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    clearInterval(phraseInterval);
-                    showPhrase(index);
-                    startAutoRotation();
-                });
+                dot.addEventListener('click', () => showPhrase(index));
             });
             
-            // Start auto-rotation
-            startAutoRotation();
-            
-            // Pause on hover
-            const phraseDisplay = document.querySelector('.phrase-display');
-            if (phraseDisplay) {
-                phraseDisplay.addEventListener('mouseenter', () => {
-                    clearInterval(phraseInterval);
-                });
-                
-                phraseDisplay.addEventListener('mouseleave', () => {
-                    startAutoRotation();
-                });
-            }
+            // Auto-rotate phrases
+            setInterval(() => {
+                currentPhraseIndex = (currentPhraseIndex + 1) % 4;
+                showPhrase(currentPhraseIndex);
+            }, 3000);
         }
-        
-        function startAutoRotation() {
-            const phraseCards = document.querySelectorAll('.phrase-card');
-            if (phraseCards.length > 0) {
-                phraseInterval = setInterval(() => {
-                    currentPhraseIndex = (currentPhraseIndex + 1) % phraseCards.length;
-                    showPhrase(currentPhraseIndex);
-                }, 3000);
-            }
-        }
-        
+
         function showPhrase(index) {
-            const phraseCards = document.querySelectorAll('.phrase-card');
+            const cards = document.querySelectorAll('.phrase-card');
             const dots = document.querySelectorAll('.showcase-dot');
             
-            phraseCards.forEach((card, i) => {
+            cards.forEach((card, i) => {
                 card.classList.toggle('active', i === index);
             });
             
@@ -2233,88 +1475,6 @@
             currentPhraseIndex = index;
         }
 
-        // Category tabs
-        function initializeCategoryTabs() {
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const category = this.dataset.category;
-                    setActiveTab(category);
-                    filterProducts(category);
-                });
-            });
-        }
-        
-        function setActiveTab(category) {
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            tabBtns.forEach(btn => {
-                if (btn.dataset.category === category) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-            currentCategory = category;
-        }
-        
-        function filterProducts(category) {
-            const productCards = document.querySelectorAll('.product-card');
-            
-            productCards.forEach(card => {
-                const itemCategory = card.dataset.category;
-                
-                if (category === 'all' || itemCategory === category) {
-                    card.classList.remove('hidden');
-                    setTimeout(() => {
-                        card.style.display = 'block';
-                    }, 50);
-                } else {
-                    card.classList.add('hidden');
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
-            });
-        }
-
-        // Product grid
-        function initializeProductGrid() {
-            const productGrid = document.getElementById('productGrid');
-            
-            if (productGrid) {
-                PRODUCT_DATA.forEach(product => {
-                    const productElement = createProductElement(product);
-                    productGrid.appendChild(productElement);
-                });
-            }
-        }
-        
-        function createProductElement(product) {
-            const productDiv = document.createElement('div');
-            productDiv.className = 'product-card';
-            productDiv.dataset.category = product.category;
-            productDiv.dataset.id = product.id;
-            
-            productDiv.innerHTML = `
-                <div class="product-icon">
-                    <i class="${product.icon}"></i>
-                </div>
-                <h3>${product.type}</h3>
-                <div class="product-phrase">${product.phrase}</div>
-                <div class="product-price">${product.price}</div>
-                <div class="product-actions">
-                    <button class="btn-view" onclick="openProductModal(${product.id})">View Details</button>
-                    <button class="btn-cart" onclick="addToCart(${product.id})">
-                        <i class="fas fa-shopping-cart"></i>
-                    </button>
-                </div>
-                <div class="subcategory-tag">Ethically Made</div>
-            `;
-            
-            return productDiv;
-        }
-
         // Cart functionality
         function initializeCart() {
             const cartButton = document.getElementById('cartButton');
@@ -2323,10 +1483,10 @@
             const closeCart = document.getElementById('closeCart');
             const checkoutBtn = document.getElementById('checkoutBtn');
 
-            cartButton.addEventListener('click', toggleCart);
-            closeCart.addEventListener('click', closeCartSidebar);
-            cartOverlay.addEventListener('click', closeCartSidebar);
-            checkoutBtn.addEventListener('click', checkout);
+            cartButton.addEventListener('click', () => toggleCart());
+            closeCart.addEventListener('click', () => closeCartSidebar());
+            cartOverlay.addEventListener('click', () => closeCartSidebar());
+            checkoutBtn.addEventListener('click', () => checkout());
         }
 
         function toggleCart() {
@@ -2346,7 +1506,7 @@
         }
 
         function addToCart(productId) {
-            const product = PRODUCT_DATA.find(p => p.id === productId);
+            const product = products.find(p => p.id === productId);
             if (!product) return;
 
             const existingItem = cart.find(item => item.id === productId);
@@ -2354,25 +1514,61 @@
             if (existingItem) {
                 existingItem.quantity += 1;
             } else {
-                cart.push({
-                    ...product,
-                    quantity: 1
-                });
+                cart.push({ ...product, quantity: 1 });
             }
 
             updateCartDisplay();
             
-            // Show brief success animation
+            // Brief animation
             const cartButton = document.getElementById('cartButton');
             cartButton.style.transform = 'scale(1.2)';
-            setTimeout(() => {
-                cartButton.style.transform = 'scale(1)';
-            }, 200);
+            setTimeout(() => cartButton.style.transform = 'scale(1)', 200);
         }
 
-        function removeFromCart(productId) {
-            cart = cart.filter(item => item.id !== productId);
-            updateCartDisplay();
+        function updateCartDisplay() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartFooter = document.getElementById('cartFooter');
+            const cartTotal = document.getElementById('cartTotal');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            cartCount.textContent = totalItems;
+            cartCount.classList.toggle('show', totalItems > 0);
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div style="text-align: center; color: #64748b; padding: 2rem;">
+                        <i class="fas fa-shopping-cart" style="font-size: 3rem; margin-bottom: 1rem; color: #94a3b8;"></i>
+                        <p>Your cart is empty</p>
+                    </div>
+                `;
+                cartFooter.style.display = 'none';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div style="display: flex; gap: 1rem; padding: 1rem; border-radius: 0.75rem; background: #f8fafc; margin-bottom: 1rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #6366f1, #818cf8); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.25rem; flex-shrink: 0;">
+                            <i class="${item.icon}"></i>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; margin-bottom: 0.25rem;">${item.name}</div>
+                            <div style="font-size: 0.875rem; color: #64748b; font-style: italic; margin-bottom: 0.25rem;">${item.phrase}</div>
+                            <div style="font-weight: 700; color: #6366f1;">${item.price.toFixed(2)}</div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <button onclick="updateQuantity(${item.id}, -1)" style="background: #6366f1; color: white; border: none; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.75rem;">-</button>
+                                <span style="font-weight: 600; min-width: 20px; text-align: center;">${item.quantity}</span>
+                                <button onclick="updateQuantity(${item.id}, 1)" style="background: #6366f1; color: white; border: none; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.75rem;">+</button>
+                            </div>
+                            <button onclick="removeFromCart(${item.id})" style="background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 0.875rem;">Remove</button>
+                        </div>
+                    </div>
+                `).join('');
+                cartFooter.style.display = 'block';
+                cartTotal.textContent = `${totalPrice.toFixed(2)}`;
+            }
         }
 
         function updateQuantity(productId, change) {
@@ -2388,191 +1584,94 @@
             }
         }
 
-        function updateCartDisplay() {
-            const cartCount = document.getElementById('cartCount');
-            const cartItems = document.getElementById('cartItems');
-            const cartEmpty = document.getElementById('cartEmpty');
-            const cartFooter = document.getElementById('cartFooter');
-            const cartTotal = document.getElementById('cartTotal');
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartDisplay();
+        }
 
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
-            // Update cart count
-            cartCount.textContent = totalItems;
-            cartCount.classList.toggle('show', totalItems > 0);
-
-            if (cart.length === 0) {
-                cartEmpty.style.display = 'block';
-                cartFooter.style.display = 'none';
-                cartItems.innerHTML = '<div class="cart-empty" id="cartEmpty"><i class="fas fa-shopping-cart"></i><p>Your cart is empty</p></div>';
-            } else {
-                cartEmpty.style.display = 'none';
-                cartFooter.style.display = 'block';
-                cartTotal.textContent = `${totalPrice.toFixed(2)}`;
-
-                cartItems.innerHTML = cart.map(item => `
-                    <div class="cart-item">
-                        <div class="cart-item-icon">
-                            <i class="${item.icon}"></i>
-                        </div>
-                        <div class="cart-item-details">
-                            <div class="cart-item-name">${item.type}</div>
-                            <div class="cart-item-phrase">${item.phrase}</div>
-                            <div class="cart-item-price">${item.price}</div>
-                        </div>
-                        <div class="cart-item-actions">
-                            <div class="quantity-controls">
-                                <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)" ${item.quantity <= 1 ? 'disabled' : ''}>-</button>
-                                <span class="quantity">${item.quantity}</span>
-                                <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
-                            </div>
-                            <button class="remove-item" onclick="removeFromCart(${item.id})">Remove</button>
-                        </div>
-                    </div>
-                `).join('');
-            }
+        function viewProduct(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            
+            alert(`${product.name}\n${product.phrase}\n${product.price.toFixed(2)}\n\nThis would open a detailed product view in a real store!`);
         }
 
         function checkout() {
             if (cart.length === 0) return;
             
-            alert(`Thank you for your order! Total: ${cart.reduce((sum, item) => sum + (item.price * item.quantity), 0).toFixed(2)}\n\nThis is a demo - no actual payment was processed.`);
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            alert(`Thank you for your order!\nTotal: ${total.toFixed(2)}\n\nThis is a demo - no payment processed.`);
+            
             cart = [];
             updateCartDisplay();
             closeCartSidebar();
         }
 
-        // Product modal
-        function initializeModal() {
-            const modal = document.getElementById('productModal');
-            const closeModal = document.getElementById('closeModal');
-            const modalAddToCart = document.getElementById('modalAddToCart');
-            const modalBuyNow = document.getElementById('modalBuyNow');
-
-            closeModal.addEventListener('click', closeProductModal);
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    closeProductModal();
-                }
-            });
-
-            modalAddToCart.addEventListener('click', function() {
-                if (currentProduct) {
-                    addToCart(currentProduct.id);
-                    closeProductModal();
-                }
-            });
-
-            modalBuyNow.addEventListener('click', function() {
-                if (currentProduct) {
-                    addToCart(currentProduct.id);
-                    closeProductModal();
-                    toggleCart();
-                }
-            });
-
-            // ESC key to close
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeProductModal();
-                    closeCartSidebar();
-                }
-            });
-        }
-
-        function openProductModal(productId) {
-            const product = PRODUCT_DATA.find(p => p.id === productId);
-            if (!product) return;
-
-            currentProduct = product;
+        // Navigation
+        function initializeNavigation() {
+            const navbar = document.querySelector('.navbar');
             
-            const modal = document.getElementById('productModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalProductName = document.getElementById('modalProductName');
-            const modalPhrase = document.getElementById('modalPhrase');
-            const modalPrice = document.getElementById('modalPrice');
-            const modalDescription = document.getElementById('modalDescription');
-            const modalImage = document.getElementById('modalImage');
-
-            modalTitle.textContent = product.type;
-            modalProductName.textContent = product.type;
-            modalPhrase.textContent = product.phrase;
-            modalPrice.textContent = `${product.price}`;
-            modalDescription.textContent = product.description;
-            modalImage.innerHTML = `<i class="${product.icon}"></i>`;
-
-            modal.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeProductModal() {
-            const modal = document.getElementById('productModal');
-            modal.classList.remove('open');
-            document.body.style.overflow = 'auto';
-            currentProduct = null;
-        }
-
-        // Smooth scrolling
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                const headerOffset = 100;
-                const elementPosition = section.offsetTop;
-                const offsetPosition = elementPosition - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }
-
-        // Initialize buttons
-        function initializeButtons() {
-            // All buttons that should scroll to products
-            document.querySelectorAll('.btn-primary, .cta-button').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    scrollToSection('products');
-                });
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
             });
 
-            // Secondary button goes to about
-            document.querySelectorAll('.btn-secondary').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    scrollToSection('about');
-                });
-            });
-
-            // Phrase display clicks go to products
-            document.querySelector('.phrase-display')?.addEventListener('click', () => {
-                scrollToSection('products');
-            });
-
-            // Nav links
-            document.querySelectorAll('.nav-link').forEach(link => {
+            // Smooth scrolling for nav links
+            document.querySelectorAll('.nav-link, .btn-primary, .cta-button').forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    scrollToSection(targetId);
+                    let targetId;
+                    
+                    if (this.classList.contains('btn-primary') || this.classList.contains('cta-button')) {
+                        targetId = 'products';
+                    } else if (this.classList.contains('btn-secondary')) {
+                        targetId = 'about';
+                    } else {
+                        targetId = this.getAttribute('href').substring(1);
+                    }
+                    
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        const headerOffset = 100;
+                        const elementPosition = target.offsetTop;
+                        const offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
         }
 
-        // Make functions global for onclick handlers
-        window.openProductModal = openProductModal;
-        window.addToCart = addToCart;
-        window.removeFromCart = removeFromCart;
-        window.updateQuantity = updateQuantity;
+        // Animate stats on page load
+        function animateStats() {
+            const stats = [
+                { element: document.getElementById('stat1'), target: 500, suffix: '+' },
+                { element: document.getElementById('stat2'), target: 15, suffix: '+' },
+                { element: document.getElementById('stat3'), target: 100, suffix: '%' }
+            ];
 
-        // Cleanup on page unload
-        window.addEventListener('beforeunload', function() {
-            if (phraseInterval) {
-                clearInterval(phraseInterval);
-            }
-        });
+            stats.forEach(stat => {
+                let current = 0;
+                const increment = stat.target / 50;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= stat.target) {
+                        current = stat.target;
+                        clearInterval(timer);
+                        stat.element.textContent = stat.target + stat.suffix;
+                    } else {
+                        stat.element.textContent = Math.floor(current);
+                    }
+                }, 30);
+            });
+        }
     </script>
 </body>
 </html>
