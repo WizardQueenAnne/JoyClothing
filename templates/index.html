@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrintsByPeter - Premium Seattle-Inspired Apparel</title>
+    <title>PrintsByPeter - Hilarious Custom T-Shirts & Ethical Apparel</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* ===== RESET & VARIABLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -15,44 +14,20 @@
         }
 
         :root {
-            /* Enhanced Seattle-inspired colors */
-            --seattle-emerald: #00695c;
-            --seattle-teal: #00897b;
-            --pacific-blue: #0277bd;
-            --space-needle-silver: #b0bec5;
-            --coffee-brown: #5d4037;
-            --salmon-pink: #ff7043;
-            --fog-gray: #90a4ae;
-            --rainforest-green: #2e7d32;
-            
-            /* Modern color palette */
             --primary: #00897b;
             --primary-light: #4db6ac;
             --primary-dark: #00695c;
             --secondary: #e0f2f1;
             --accent: #ff7043;
-            --accent-light: #ffab91;
             --text-dark: #263238;
             --text-medium: #546e7a;
             --text-light: #90a4ae;
             --background: #fafafa;
             --background-light: #ffffff;
-            --background-section: #f1f8e9;
             --border-light: #e0e0e0;
-            --shadow-color: rgba(38, 50, 56, 0.15);
             --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-light));
-            --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-light));
-            
-            /* Typography */
+            --gradient-accent: linear-gradient(135deg, var(--accent), #ffab91);
             --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            --font-weight-light: 300;
-            --font-weight-normal: 400;
-            --font-weight-medium: 500;
-            --font-weight-semibold: 600;
-            --font-weight-bold: 700;
-            --font-weight-extrabold: 800;
-            
-            /* Spacing */
             --space-xs: 0.5rem;
             --space-sm: 1rem;
             --space-md: 1.5rem;
@@ -60,43 +35,28 @@
             --space-xl: 3rem;
             --space-2xl: 4rem;
             --space-3xl: 6rem;
-            
-            /* Enhanced shadows */
             --shadow-sm: 0 2px 4px rgba(38, 50, 56, 0.08);
             --shadow-md: 0 4px 12px rgba(38, 50, 56, 0.12);
             --shadow-lg: 0 8px 25px rgba(38, 50, 56, 0.15);
             --shadow-xl: 0 12px 40px rgba(38, 50, 56, 0.2);
-            --shadow-2xl: 0 25px 50px rgba(38, 50, 56, 0.25);
-            
-            /* Border Radius */
             --radius-sm: 8px;
             --radius-md: 12px;
             --radius-lg: 16px;
             --radius-xl: 24px;
             --radius-2xl: 32px;
             --radius-full: 50px;
-            
-            /* Enhanced transitions */
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
-        /* ===== BASE STYLES ===== */
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
         }
 
         body {
             font-family: var(--font-family);
-            font-size: 1rem;
             line-height: 1.6;
             color: var(--text-dark);
             background: var(--background);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
         }
 
@@ -106,114 +66,74 @@
             padding: 0 var(--space-lg);
         }
 
-        /* ===== ENHANCED NAVIGATION ===== */
+        /* Navigation */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(20px) saturate(180%);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-light);
             z-index: 1000;
             transition: var(--transition);
-            transform: translateY(0);
         }
 
         .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.98);
             box-shadow: var(--shadow-lg);
-        }
-
-        .navbar.hidden {
-            transform: translateY(-100%);
         }
 
         .nav-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: var(--space-md) 0;
+            padding: var(--space-md) var(--space-lg);
             max-width: 1200px;
             margin: 0 auto;
-            padding-left: var(--space-lg);
-            padding-right: var(--space-lg);
         }
 
         .nav-brand {
             display: flex;
             flex-direction: column;
-            animation: slideInLeft 0.8s ease-out;
         }
 
         .brand-name {
             font-size: 1.6rem;
-            font-weight: var(--font-weight-extrabold);
-            color: var(--text-dark);
-            transition: var(--transition);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            letter-spacing: -0.02em;
+            font-weight: 800;
             background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 70%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-
-        .brand-name:hover {
-            transform: scale(1.05);
+            letter-spacing: -0.02em;
         }
 
         .brand-tagline {
             font-size: 0.8rem;
             color: var(--primary);
-            font-weight: var(--font-weight-semibold);
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.15em;
             margin-top: -2px;
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
             gap: var(--space-xl);
-            animation: slideInRight 0.8s ease-out;
         }
 
         .nav-link {
             text-decoration: none;
             color: var(--text-medium);
-            font-weight: var(--font-weight-medium);
+            font-weight: 500;
             font-size: 0.95rem;
             transition: var(--transition);
-            position: relative;
             padding: var(--space-xs) var(--space-sm);
             border-radius: var(--radius-sm);
+            position: relative;
         }
 
-        .nav-link:hover {
-            color: var(--primary);
-            background: var(--secondary);
-            transform: translateY(-2px);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: var(--transition);
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 80%;
-        }
-
+        .nav-link:hover,
         .nav-link.active {
             color: var(--primary);
             background: var(--secondary);
@@ -225,41 +145,18 @@
             border: none;
             padding: var(--space-sm) var(--space-lg);
             border-radius: var(--radius-full);
-            font-weight: var(--font-weight-semibold);
+            font-weight: 600;
             font-size: 0.9rem;
             cursor: pointer;
-            transition: var(--transition-bounce);
-            box-shadow: var(--shadow-md);
-            animation: slideInRight 0.8s ease-out 0.3s both;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: var(--transition);
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
+            box-shadow: var(--shadow-md);
         }
 
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
+            transform: translateY(-2px);
             box-shadow: var(--shadow-xl);
         }
 
-        .cta-button:active {
-            transform: translateY(-1px) scale(1.02);
-        }
-
-        /* Mobile menu toggle */
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -268,63 +165,17 @@
             color: var(--text-dark);
             cursor: pointer;
             padding: var(--space-xs);
-            border-radius: var(--radius-sm);
-            transition: var(--transition);
         }
 
-        .mobile-menu-toggle:hover {
-            background: var(--secondary);
-            color: var(--primary);
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                padding: var(--space-lg);
-                gap: var(--space-sm);
-                border-top: 1px solid var(--border-light);
-                box-shadow: var(--shadow-lg);
-            }
-
-            .nav-menu.active {
-                display: flex;
-                animation: slideInDown 0.3s ease-out;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-            }
-            
-            .nav-container {
-                padding: var(--space-md);
-            }
-            
-            .brand-name {
-                font-size: 1.3rem;
-            }
-
-            .cta-button {
-                padding: var(--space-xs) var(--space-md);
-                font-size: 0.8rem;
-            }
-        }
-
-        /* ===== ENHANCED HERO SECTION ===== */
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, #e8f5e8 0%, #f0f4f8 30%, #e0f2f1 70%, #f1f8e9 100%);
-            padding-top: 90px;
-            position: relative;
-            overflow: hidden;
+            padding-top: 100px;
             display: flex;
             align-items: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero::before {
@@ -336,25 +187,20 @@
             bottom: 0;
             background: 
                 radial-gradient(circle at 20% 80%, rgba(0, 137, 123, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 112, 67, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(93, 64, 55, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 80% 20%, rgba(255, 112, 67, 0.08) 0%, transparent 50%);
             animation: gradientShift 12s ease-in-out infinite alternate;
             pointer-events: none;
         }
 
         @keyframes gradientShift {
-            0% { opacity: 0.6; transform: translateX(0) translateY(0); }
-            50% { opacity: 0.8; transform: translateX(10px) translateY(5px); }
-            100% { opacity: 0.4; transform: translateX(-5px) translateY(-10px); }
+            0% { opacity: 0.6; }
+            100% { opacity: 0.4; }
         }
 
         .hero-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 var(--space-lg);
-            height: 100%;
-            display: flex;
-            align-items: center;
             position: relative;
             z-index: 1;
         }
@@ -364,7 +210,6 @@
             grid-template-columns: 1fr 1fr;
             gap: var(--space-3xl);
             align-items: center;
-            width: 100%;
         }
 
         .hero-badge {
@@ -377,43 +222,24 @@
             padding: var(--space-sm) var(--space-lg);
             border-radius: var(--radius-full);
             font-size: 0.875rem;
-            font-weight: var(--font-weight-semibold);
+            font-weight: 600;
             margin-bottom: var(--space-lg);
             border: 2px solid rgba(0, 137, 123, 0.2);
             box-shadow: var(--shadow-md);
-            animation: float 3s ease-in-out infinite, slideInDown 0.8s ease-out;
-            transform: translateY(0);
             width: fit-content;
         }
 
         .hero-badge::before {
-            content: '🏔️';
+            content: '🎭';
             font-size: 1rem;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-
-        @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .hero-title {
             font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: var(--font-weight-extrabold);
+            font-weight: 800;
             line-height: 1.1;
             color: var(--text-dark);
             margin-bottom: var(--space-lg);
-            animation: slideInLeft 0.8s ease-out 0.2s both;
         }
 
         .text-highlight {
@@ -421,13 +247,6 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.02); }
         }
 
         .hero-description {
@@ -436,8 +255,7 @@
             line-height: 1.7;
             margin-bottom: var(--space-xl);
             max-width: 520px;
-            font-weight: var(--font-weight-medium);
-            animation: slideInLeft 0.8s ease-out 0.4s both;
+            font-weight: 500;
         }
 
         .hero-buttons {
@@ -445,7 +263,6 @@
             gap: var(--space-lg);
             margin-bottom: var(--space-2xl);
             flex-wrap: wrap;
-            animation: slideInLeft 0.8s ease-out 0.6s both;
         }
 
         .btn {
@@ -454,31 +271,13 @@
             justify-content: center;
             padding: var(--space-md) var(--space-xl);
             border-radius: var(--radius-md);
-            font-weight: var(--font-weight-semibold);
+            font-weight: 600;
             font-size: 1.1rem;
             text-decoration: none;
             border: none;
             cursor: pointer;
-            transition: var(--transition-bounce);
-            white-space: nowrap;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: var(--transition);
-        }
-
-        .btn:hover::before {
-            left: 100%;
+            box-shadow: var(--shadow-md);
         }
 
         .btn-primary {
@@ -487,7 +286,7 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-4px) scale(1.05);
+            transform: translateY(-4px);
             box-shadow: var(--shadow-xl);
         }
 
@@ -495,52 +294,26 @@
             background: rgba(255, 255, 255, 0.9);
             color: var(--primary);
             border: 2px solid var(--primary);
-            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
             background: var(--primary);
             color: white;
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: var(--shadow-xl);
+            transform: translateY(-4px);
         }
 
         .hero-stats {
             display: flex;
             gap: var(--space-2xl);
-            animation: slideInLeft 0.8s ease-out 0.8s both;
         }
 
         .stat {
             text-align: left;
-            position: relative;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .stat::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-            transition: var(--transition-slow);
-            border-radius: var(--radius-sm);
-        }
-
-        .stat:hover::after {
-            width: 100%;
-        }
-
-        .stat:hover {
-            transform: translateY(-3px);
         }
 
         .stat-number {
             font-size: 2.5rem;
-            font-weight: var(--font-weight-extrabold);
+            font-weight: 800;
             background: var(--gradient-primary);
             background-clip: text;
             -webkit-background-clip: text;
@@ -552,248 +325,122 @@
         .stat-label {
             font-size: 0.95rem;
             color: var(--text-medium);
-            font-weight: var(--font-weight-medium);
+            font-weight: 500;
             margin-top: var(--space-xs);
         }
 
-        /* ===== ENHANCED PRODUCT MOCKUP ===== */
+        /* Hero Visual */
         .hero-visual {
-            position: relative;
-            height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: slideInRight 0.8s ease-out 0.4s both;
-        }
-
-        .product-mockup {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            perspective: 1000px;
-        }
-
-        .mockup-item {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(20px) saturate(180%);
-            border-radius: var(--radius-2xl);
-            padding: var(--space-lg);
-            box-shadow: 0 15px 35px rgba(0, 137, 123, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: var(--space-sm);
-            transition: var(--transition-slow);
-            cursor: pointer;
-            border: 2px solid rgba(0, 137, 123, 0.1);
-            animation: gentleFloat 6s ease-in-out infinite;
-            overflow: hidden;
-            position: relative;
+            gap: var(--space-xl);
         }
 
-        .mockup-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+        .phrase-display {
+            position: relative;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 137, 123, 0.1), transparent);
-            transition: var(--transition-slow);
+            max-width: 500px;
+            height: 300px;
+            border-radius: var(--radius-2xl);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-xl);
+            border: 2px solid rgba(0, 137, 123, 0.1);
+            overflow: hidden;
+            cursor: pointer;
         }
 
-        .mockup-item:hover::before {
-            left: 100%;
-        }
-
-        .mockup-item:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 25px 50px rgba(0, 137, 123, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
-            background: rgba(255, 255, 255, 1);
-            border-color: rgba(0, 137, 123, 0.3);
-        }
-
-        .mockup-hoodie {
-            top: 20%;
-            left: 8%;
-            width: 170px;
-            height: 150px;
-            animation-delay: 0s;
-        }
-
-        .mockup-hat {
-            top: 10%;
-            right: 8%;
-            width: 160px;
-            height: 140px;
-            animation-delay: 2s;
-        }
-
-        .mockup-mug {
-            bottom: 20%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 165px;
-            height: 145px;
-            animation-delay: 4s;
-        }
-
-        .mockup-item i {
-            font-size: 3.2rem;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: var(--transition-bounce);
-            filter: drop-shadow(0 4px 8px rgba(0, 137, 123, 0.2));
-            margin-bottom: var(--space-sm);
-            position: relative;
-            z-index: 2;
-        }
-
-        .mockup-item:hover i {
-            transform: scale(1.15);
-            filter: drop-shadow(0 6px 12px rgba(0, 137, 123, 0.3));
-        }
-
-        .mockup-item span {
-            font-size: 0.9rem;
-            font-weight: var(--font-weight-bold);
-            color: var(--text-dark);
-            text-align: center;
-            transition: var(--transition);
-            line-height: 1.3;
-            max-width: 100%;
-            word-wrap: break-word;
-            padding: 0 var(--space-sm);
-            position: relative;
-            z-index: 2;
-        }
-
-        .mockup-item:hover span {
-            color: var(--primary);
-            transform: scale(1.05);
-        }
-
-        @keyframes gentleFloat {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-8px) rotate(1deg); }
-            66% { transform: translateY(4px) rotate(-0.5deg); }
-        }
-
-        .design-elements {
+        .phrase-card {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            pointer-events: none;
-            z-index: -1;
+            padding: var(--space-2xl);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.6s ease;
         }
 
-        .element {
-            position: absolute;
-            border-radius: 50%;
+        .phrase-card.active {
+            opacity: 1;
+        }
+
+        .phrase-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.3;
+            margin-bottom: var(--space-lg);
+            font-style: italic;
+        }
+
+        .phrase-category {
             background: var(--gradient-primary);
-            opacity: 0.12;
-            animation: floatElements 10s ease-in-out infinite;
+            color: white;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        .element-1 {
-            width: 140px;
-            height: 140px;
-            top: 20%;
-            right: 0;
-            animation-delay: 0s;
+        .showcase-controls {
+            display: flex;
+            gap: var(--space-sm);
         }
 
-        .element-2 {
-            width: 100px;
-            height: 100px;
-            bottom: 20%;
-            right: 30%;
-            animation-delay: 4s;
+        .showcase-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(0, 137, 123, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
         }
 
-        .element-3 {
-            width: 180px;
-            height: 180px;
-            top: 50%;
-            left: 5%;
-            animation-delay: 8s;
+        .showcase-dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
         }
 
-        @keyframes floatElements {
-            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
-            25% { transform: translateY(-30px) rotate(90deg) scale(1.1); }
-            50% { transform: translateY(-15px) rotate(180deg) scale(0.9); }
-            75% { transform: translateY(-45px) rotate(270deg) scale(1.05); }
+        .showcase-dot:hover {
+            background: var(--primary-light);
         }
 
-        /* ===== ENHANCED SECTIONS ===== */
+        /* Products Section */
         .section {
             padding: var(--space-3xl) 0;
             position: relative;
-            overflow: hidden;
-        }
-
-        .collections {
-            background: linear-gradient(135deg, #f8fafc 0%, #e8f5e8 30%, #f0f9ff 70%, #e0f2f1 100%);
         }
 
         .products {
             background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e8 30%, #e0f2f1 70%, #f0f9ff 100%);
         }
 
-        .about {
-            background: linear-gradient(135deg, #f8fafc 0%, #f0f4f8 30%, #e8f5e8 70%, #f1f8e9 100%);
-        }
-
-        .contact {
-            background: linear-gradient(135deg, #e0f2f1 0%, #f1f8e9 30%, #f8fafc 70%, #f0f4f8 100%);
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 15% 85%, rgba(0, 137, 123, 0.04) 0%, transparent 50%),
-                radial-gradient(circle at 85% 15%, rgba(255, 112, 67, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(93, 64, 55, 0.02) 0%, transparent 60%);
-            pointer-events: none;
-            animation: sectionShift 15s ease-in-out infinite alternate;
-        }
-
-        @keyframes sectionShift {
-            0% { opacity: 0.3; transform: scale(1) rotate(0deg); }
-            50% { opacity: 0.6; transform: scale(1.05) rotate(2deg); }
-            100% { opacity: 0.4; transform: scale(0.95) rotate(-1deg); }
-        }
-
         .section-header {
             text-align: center;
             margin-bottom: var(--space-3xl);
-            position: relative;
-            z-index: 1;
         }
 
         .section-title {
             font-size: clamp(2.5rem, 5vw, 3.8rem);
-            font-weight: var(--font-weight-extrabold);
-            background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 50%, var(--text-medium) 100%);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 50%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: var(--space-lg);
             line-height: 1.1;
             position: relative;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .section-title::after {
@@ -806,7 +453,6 @@
             height: 5px;
             background: var(--gradient-primary);
             border-radius: var(--radius-full);
-            box-shadow: 0 2px 8px rgba(0, 137, 123, 0.3);
         }
 
         .section-subtitle {
@@ -815,447 +461,152 @@
             max-width: 750px;
             margin: 0 auto;
             line-height: 1.7;
-            font-weight: var(--font-weight-medium);
+            font-weight: 500;
         }
 
-        /* ===== ENHANCED COLLECTIONS SECTION ===== */
-        .collections-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: var(--space-2xl);
-            position: relative;
-            z-index: 1;
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-bottom: var(--space-3xl);
         }
 
-        .collection-card {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(25px) saturate(180%);
-            border-radius: var(--radius-2xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            transition: var(--transition-slow);
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid var(--border-light);
+            color: var(--text-medium);
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 1rem;
             cursor: pointer;
-            border: 2px solid rgba(255, 255, 255, 0.4);
-            transform: translateY(0);
-            position: relative;
-        }
-
-        .collection-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-primary);
-            opacity: 0;
             transition: var(--transition);
-            z-index: -1;
+            backdrop-filter: blur(10px);
         }
 
-        .collection-card:hover::before {
-            opacity: 0.05;
+        .tab-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
 
-        .collection-card:hover {
-            transform: translateY(-20px) scale(1.03);
-            box-shadow: var(--shadow-2xl);
+        .tab-btn.active {
+            background: var(--gradient-primary);
+            border-color: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Product Showcase */
+        .product-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .product-item {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            text-align: center;
+            cursor: pointer;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-item.hidden {
+            display: none;
+        }
+
+        .product-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-xl);
             border-color: rgba(0, 137, 123, 0.3);
         }
 
-        .card-image {
-            height: 320px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Updated collection gradients with better visual appeal */
-        .space-needle-gradient {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 20%, #334155 50%, #64748b 80%, #cbd5e1 100%);
-            position: relative;
-        }
-
-        .space-needle-gradient::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 6px;
+        .product-icon {
+            width: 80px;
             height: 80px;
-            background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.6));
-            border-radius: 3px;
-            animation: spaceneedle 4s ease-in-out infinite;
-        }
-
-        .space-needle-gradient::after {
-            content: '';
-            position: absolute;
-            top: 25%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+            background: var(--gradient-primary);
             border-radius: 50%;
-            animation: spaceneedle 4s ease-in-out infinite 0.5s;
-        }
-
-        @keyframes spaceneedle {
-            0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
-            50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.15); }
-        }
-
-        .lake-union-gradient {
-            background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 20%, #0284c7 50%, #0ea5e9 80%, #7dd3fc 100%);
-            position: relative;
-        }
-
-        .lake-union-gradient::before {
-            content: '';
-            position: absolute;
-            top: 60%;
-            left: 40%;
-            transform: translate(-50%, -50%);
-            width: 0;
-            height: 0;
-            border-left: 20px solid transparent;
-            border-right: 20px solid transparent;
-            border-bottom: 35px solid rgba(255, 255, 255, 0.5);
-            animation: sailboat 5s ease-in-out infinite;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-        }
-
-        .lake-union-gradient::after {
-            content: '';
-            position: absolute;
-            top: 72%;
-            left: 40%;
-            transform: translate(-50%, -50%);
-            width: 45px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 2px;
-            animation: sailboat 5s ease-in-out infinite 0.3s;
-        }
-
-        @keyframes sailboat {
-            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) translateX(0) scale(1); }
-            50% { opacity: 0.9; transform: translate(-50%, -50%) translateX(15px) scale(1.1); }
-        }
-
-        .culture-gradient {
-            background: linear-gradient(135deg, #431407 0%, #7c2d12 20%, #9a3412 50%, #c2410c 80%, #fed7aa 100%);
-            position: relative;
-        }
-
-        .culture-gradient::before {
-            content: '';
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 28px;
-            height: 35px;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5));
-            border-radius: 0 0 14px 14px;
-            animation: coffee 3s ease-in-out infinite;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-        }
-
-        .culture-gradient::after {
-            content: '';
-            position: absolute;
-            top: 32%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 32px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 2px;
-            animation: coffee 3s ease-in-out infinite 0.4s;
-        }
-
-        @keyframes coffee {
-            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
-            50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.1); }
-        }
-
-        .card-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.45);
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-            backdrop-filter: blur(3px);
-        }
-
-        .collection-card:hover .card-overlay {
-            opacity: 1;
-        }
-
-        .card-icons {
-            display: flex;
-            gap: var(--space-xl);
+            margin: 0 auto var(--space-lg);
             color: white;
+            font-size: 2rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
         }
 
-        .card-icons i {
-            font-size: 3rem;
-            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
-            transition: var(--transition-bounce);
-            animation: iconFloat 3s ease-in-out infinite;
+        .product-item:hover .product-icon {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-lg);
         }
 
-        .card-icons i:nth-child(2) {
-            animation-delay: 0.5s;
-        }
-
-        .card-icons i:nth-child(3) {
-            animation-delay: 1s;
-        }
-
-        @keyframes iconFloat {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-8px) scale(1.1); }
-        }
-
-        .card-content {
-            padding: var(--space-2xl);
-            position: relative;
-            background: rgba(255, 255, 255, 0.98);
-        }
-
-        .card-content h3 {
-            font-size: 1.6rem;
-            font-weight: var(--font-weight-bold);
+        .product-item h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
             color: var(--text-dark);
             margin-bottom: var(--space-md);
             transition: var(--transition);
         }
 
-        .collection-card:hover .card-content h3 {
+        .product-item:hover h3 {
             color: var(--primary);
-            transform: translateY(-3px);
         }
 
-        .card-content p {
+        .product-phrase {
+            font-style: italic;
             color: var(--text-medium);
-            margin-bottom: var(--space-xl);
-            line-height: 1.7;
-            font-size: 1.05rem;
-        }
-
-        .card-button {
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            padding: var(--space-md) var(--space-xl);
-            border-radius: var(--radius-lg);
-            font-weight: var(--font-weight-semibold);
-            font-size: 1.05rem;
-            cursor: pointer;
-            transition: var(--transition-bounce);
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-
-        .card-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: var(--transition);
-        }
-
-        .card-button:hover::before {
-            left: 100%;
-        }
-
-        .card-button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        /* ===== ENHANCED PRODUCTS SECTION ===== */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: var(--space-2xl);
-            position: relative;
-            z-index: 1;
-        }
-
-        .product-category {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(25px) saturate(180%);
-            border-radius: var(--radius-2xl);
-            padding: var(--space-2xl);
-            box-shadow: var(--shadow-lg);
-            transition: var(--transition-slow);
-            text-align: center;
-            border: 2px solid rgba(255, 255, 255, 0.4);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .product-category::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .product-category:hover::before {
-            opacity: 0.05;
-        }
-
-        .product-category:hover {
-            transform: translateY(-12px) scale(1.03);
-            box-shadow: var(--shadow-2xl);
-            border-color: rgba(0, 137, 123, 0.3);
-        }
-
-        .category-icon {
-            width: 100px;
-            height: 100px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
+            margin-bottom: var(--space-lg);
+            font-size: 1rem;
+            line-height: 1.4;
+            min-height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto var(--space-xl);
-            color: white;
-            font-size: 2.5rem;
-            transition: var(--transition-bounce);
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            z-index: 1;
         }
 
-        .category-icon::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            opacity: 0.3;
-            z-index: -1;
-            transition: var(--transition);
-        }
-
-        .product-category:hover .category-icon {
-            transform: scale(1.15) rotateY(15deg);
-            box-shadow: var(--shadow-2xl);
-        }
-
-        .product-category:hover .category-icon::before {
-            opacity: 0.5;
-            transform: scale(1.2);
-        }
-
-        .product-category h3 {
-            font-size: 1.6rem;
-            font-weight: var(--font-weight-bold);
-            color: var(--text-dark);
-            margin-bottom: var(--space-xl);
-            transition: var(--transition);
-            position: relative;
-            z-index: 1;
-        }
-
-        .product-category:hover h3 {
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
             color: var(--primary);
-            transform: translateY(-3px);
+            margin-bottom: var(--space-md);
         }
 
-        .product-list {
-            list-style: none;
-            margin-bottom: var(--space-xl);
-            text-align: left;
-            position: relative;
-            z-index: 1;
-        }
-
-        .product-list li {
-            padding: var(--space-sm) 0;
-            color: var(--text-medium);
-            font-size: 1.05rem;
-            position: relative;
-            padding-left: var(--space-xl);
-            transition: var(--transition);
-            border-radius: var(--radius-sm);
-            margin-bottom: var(--space-xs);
-            font-weight: var(--font-weight-medium);
-            cursor: pointer;
-        }
-
-        .product-list li:hover {
+        .subcategory-tag {
+            background: var(--secondary);
             color: var(--primary);
-            background: rgba(0, 137, 123, 0.08);
-            transform: translateX(10px);
-            padding-left: calc(var(--space-xl) + 10px);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
-        .product-list li::before {
-            content: '✦';
-            color: var(--primary);
-            position: absolute;
-            left: var(--space-sm);
-            font-weight: bold;
-            transition: var(--transition-bounce);
-            font-size: 1.1rem;
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #f8fafc 0%, #f0f4f8 30%, #e8f5e8 70%, #f1f8e9 100%);
         }
 
-        .product-list li:hover::before {
-            transform: scale(1.4) rotate(180deg);
-            color: var(--accent);
-        }
-
-        .category-desc {
-            color: var(--text-medium);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            font-weight: var(--font-weight-medium);
-        }
-
-        /* ===== ENHANCED ABOUT SECTION ===== */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: var(--space-3xl);
             align-items: center;
-            position: relative;
-            z-index: 1;
         }
 
         .about-text h2 {
             font-size: clamp(2.2rem, 5vw, 3.2rem);
-            font-weight: var(--font-weight-extrabold);
-            background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 50%, var(--text-medium) 100%);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 50%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -1267,7 +618,7 @@
             font-size: 1.4rem;
             color: var(--text-medium);
             margin-bottom: var(--space-xl);
-            font-weight: var(--font-weight-medium);
+            font-weight: 500;
             line-height: 1.7;
         }
 
@@ -1291,8 +642,6 @@
             padding: var(--space-lg);
             border-radius: var(--radius-lg);
             transition: var(--transition);
-            cursor: pointer;
-            border: 2px solid transparent;
             background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(10px);
         }
@@ -1300,7 +649,6 @@
         .feature:hover {
             background: rgba(0, 137, 123, 0.08);
             transform: translateX(15px);
-            border-color: var(--primary);
             box-shadow: var(--shadow-lg);
         }
 
@@ -1315,38 +663,18 @@
             color: white;
             font-size: 2rem;
             flex-shrink: 0;
-            transition: var(--transition-bounce);
-            box-shadow: var(--shadow-lg);
-            position: relative;
-        }
-
-        .feature-icon::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            opacity: 0.2;
-            z-index: -1;
             transition: var(--transition);
+            box-shadow: var(--shadow-lg);
         }
 
         .feature:hover .feature-icon {
-            transform: scale(1.15) rotateY(15deg);
-            box-shadow: var(--shadow-2xl);
-        }
-
-        .feature:hover .feature-icon::before {
-            opacity: 0.4;
-            transform: scale(1.3);
+            transform: scale(1.15);
+            box-shadow: var(--shadow-xl);
         }
 
         .feature-text h4 {
             font-size: 1.4rem;
-            font-weight: var(--font-weight-semibold);
+            font-weight: 600;
             color: var(--text-dark);
             margin-bottom: var(--space-sm);
             transition: var(--transition);
@@ -1369,68 +697,87 @@
             justify-content: center;
         }
 
-        .visual-placeholder {
-            width: 420px;
-            height: 420px;
-            background: var(--gradient-primary);
+        .about-illustration {
+            background: linear-gradient(135deg, var(--background-light), rgba(0, 137, 123, 0.05));
             border-radius: var(--radius-2xl);
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-lg);
+            border: 2px solid rgba(0, 137, 123, 0.1);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .about-illustration:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .illustration-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
+            margin: 0 auto var(--space-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .illustration-icon i {
+            font-size: 3rem;
             color: white;
-            box-shadow: var(--shadow-2xl);
-            position: relative;
-            overflow: hidden;
-            animation: float 6s ease-in-out infinite;
-            border: 3px solid rgba(255, 255, 255, 0.2);
         }
 
-        .visual-placeholder::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
-            animation: shimmer 4s ease-in-out infinite;
+        .about-illustration:hover .illustration-icon {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-lg);
         }
 
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        .illustration-content h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: var(--space-md);
         }
 
-        .visual-placeholder i {
-            font-size: 6.5rem;
-            margin-bottom: var(--space-xl);
-            position: relative;
-            z-index: 1;
-            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4));
-            animation: pulse 3s ease-in-out infinite;
+        .illustration-content p {
+            color: var(--text-medium);
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
         }
 
-        .visual-placeholder span {
-            font-size: 2rem;
-            font-weight: var(--font-weight-bold);
-            position: relative;
-            z-index: 1;
-            text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+        .illustration-features {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            align-items: center;
         }
 
-        /* ===== CONTACT SECTION ===== */
+        .illustration-features span {
+            background: rgba(0, 137, 123, 0.1);
+            color: var(--primary);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #e0f2f1 0%, #f1f8e9 30%, #f8fafc 70%, #f0f4f8 100%);
+        }
+
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: var(--space-3xl);
-            position: relative;
-            z-index: 1;
         }
 
         .contact-info {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(25px) saturate(180%);
+            backdrop-filter: blur(25px);
             border-radius: var(--radius-2xl);
             padding: var(--space-2xl);
             box-shadow: var(--shadow-lg);
@@ -1439,7 +786,7 @@
 
         .contact-info h3 {
             font-size: 2rem;
-            font-weight: var(--font-weight-bold);
+            font-weight: 700;
             color: var(--text-dark);
             margin-bottom: var(--space-xl);
         }
@@ -1480,16 +827,16 @@
             color: white;
             font-size: 1.5rem;
             flex-shrink: 0;
-            transition: var(--transition-bounce);
+            transition: var(--transition);
         }
 
         .contact-method:hover .contact-icon {
-            transform: scale(1.1) rotateY(15deg);
+            transform: scale(1.1);
         }
 
         .contact-details h4 {
             font-size: 1.2rem;
-            font-weight: var(--font-weight-semibold);
+            font-weight: 600;
             color: var(--text-dark);
             margin-bottom: var(--space-xs);
         }
@@ -1497,7 +844,7 @@
         .contact-details a {
             color: var(--primary);
             text-decoration: none;
-            font-weight: var(--font-weight-medium);
+            font-weight: 500;
             transition: var(--transition);
         }
 
@@ -1506,370 +853,58 @@
             text-decoration: underline;
         }
 
+        .contact-details span {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
         .contact-visual {
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .contact-placeholder {
-            width: 100%;
-            max-width: 450px;
-            height: 400px;
-            background: var(--gradient-accent);
+        .contact-illustration {
+            background: linear-gradient(135deg, var(--background-light), rgba(0, 137, 123, 0.05));
             border-radius: var(--radius-2xl);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            box-shadow: var(--shadow-2xl);
-            position: relative;
-            overflow: hidden;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .contact-placeholder::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
-            animation: shimmer 5s ease-in-out infinite;
-        }
-
-        .contact-placeholder i {
-            font-size: 5rem;
-            margin-bottom: var(--space-lg);
-            position: relative;
-            z-index: 1;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-        }
-
-        .contact-placeholder .title {
-            font-size: 1.8rem;
-            font-weight: var(--font-weight-bold);
-            margin-bottom: var(--space-sm);
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-placeholder .subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            max-width: 80%;
-        }
-
-        /* ===== ENHANCED MODALS ===== */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px) saturate(180%);
-            z-index: 2000;
-            animation: fadeIn 0.4s ease;
-        }
-
-        .modal-content {
-            position: relative;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px) saturate(180%);
-            margin: 3% auto;
-            width: 95%;
-            max-width: 1100px;
-            border-radius: var(--radius-2xl);
-            box-shadow: var(--shadow-2xl);
-            animation: slideIn 0.4s ease;
-            max-height: 90vh;
-            overflow-y: auto;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-50px) scale(0.9); opacity: 0; }
-            to { transform: translateY(0) scale(1); opacity: 1; }
-        }
-
-        .modal-header {
-            padding: var(--space-xl);
-            border-bottom: 1px solid var(--border-light);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(135deg, var(--background-light), var(--secondary));
-            border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
-        }
-
-        .modal-header h2 {
-            font-size: 1.8rem;
-            font-weight: var(--font-weight-bold);
-            background: linear-gradient(135deg, var(--text-dark), var(--primary));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .close-modal {
-            background: rgba(244, 67, 54, 0.1);
-            border: 1px solid rgba(244, 67, 54, 0.2);
-            font-size: 1.5rem;
-            color: #f44336;
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition-bounce);
-        }
-
-        .close-modal:hover {
-            background: rgba(244, 67, 54, 0.2);
-            color: #d32f2f;
-            transform: scale(1.1) rotate(90deg);
-        }
-
-        .modal-body {
-            padding: var(--space-xl);
-        }
-
-        .selected-collection {
-            background: linear-gradient(135deg, var(--background-light), var(--secondary));
-            padding: var(--space-xl);
-            border-radius: var(--radius-xl);
-            margin-bottom: var(--space-xl);
-            text-align: center;
-            border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .selected-collection h3 {
-            font-size: 1.6rem;
-            font-weight: var(--font-weight-bold);
-            color: var(--text-dark);
-            margin-bottom: var(--space-sm);
-        }
-
-        .selected-collection h4 {
-            font-size: 1.4rem;
-            font-weight: var(--font-weight-bold);
-            color: var(--primary);
-            margin-bottom: var(--space-sm);
-        }
-
-        .selected-collection p {
-            color: var(--text-medium);
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: var(--space-sm);
-        }
-
-        .modal-categories, .modal-subcategories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-lg);
-        }
-
-        .modal-category, .modal-subcategory {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border: 2px solid var(--border-light);
-            border-radius: var(--radius-xl);
-            padding: var(--space-xl);
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition-slow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .modal-category::before, .modal-subcategory::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-primary);
-            opacity: 0;
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-lg);
+            border: 2px solid rgba(0, 137, 123, 0.1);
             transition: var(--transition);
+            text-align: center;
         }
 
-        .modal-category:hover::before, .modal-subcategory:hover::before {
-            opacity: 0.1;
-        }
-
-        .modal-category:hover, .modal-subcategory:hover {
-            border-color: var(--primary);
-            background: rgba(255, 255, 255, 1);
-            transform: translateY(-8px) scale(1.02);
+        .contact-illustration:hover {
+            transform: translateY(-5px);
             box-shadow: var(--shadow-xl);
         }
 
-        .modal-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
+        .contact-features {
             display: flex;
-            align-items: center;
+            gap: var(--space-lg);
             justify-content: center;
-            margin: 0 auto var(--space-md);
-            color: white;
-            font-size: 2rem;
-            transition: var(--transition-bounce);
-            box-shadow: var(--shadow-md);
-            position: relative;
-            z-index: 1;
         }
 
-        .modal-category:hover .modal-icon, .modal-subcategory:hover .modal-icon {
-            transform: scale(1.15) rotateY(15deg);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .modal-category h4, .modal-subcategory h4 {
-            font-size: 1.3rem;
-            font-weight: var(--font-weight-semibold);
-            color: var(--text-dark);
-            margin-bottom: var(--space-xs);
-            transition: var(--transition);
-            position: relative;
-            z-index: 1;
-        }
-
-        .modal-category:hover h4, .modal-subcategory:hover h4 {
-            color: var(--primary);
-        }
-
-        .modal-category p {
-            color: var(--text-medium);
-            font-size: 0.95rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ===== IMAGE GALLERY MODAL ===== */
-        .gallery-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 3000;
-            animation: fadeIn 0.4s ease;
-        }
-
-        .gallery-content {
-            position: relative;
-            width: 100%;
-            height: 100%;
+        .contact-feature {
             display: flex;
             flex-direction: column;
-        }
-
-        .gallery-header {
-            padding: var(--space-lg);
-            color: white;
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
+            gap: var(--space-xs);
         }
 
-        .gallery-title {
+        .contact-feature i {
             font-size: 1.5rem;
-            font-weight: var(--font-weight-bold);
+            color: var(--primary);
+            margin-bottom: var(--space-xs);
         }
 
-        .gallery-close {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            font-size: 1.5rem;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .contact-feature span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-medium);
         }
 
-        .gallery-close:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.1);
-        }
-
-        .gallery-main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: var(--space-lg);
-            position: relative;
-        }
-
-        .gallery-image {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-2xl);
-        }
-
-        .gallery-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            font-size: 1.5rem;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .gallery-nav:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .gallery-prev {
-            left: var(--space-lg);
-        }
-
-        .gallery-next {
-            right: var(--space-lg);
-        }
-
-        /* ===== SUCCESS MODAL ===== */
+        /* Success Modal */
         .success-modal {
             position: fixed;
             top: 0;
@@ -1893,72 +928,37 @@
             text-align: center;
             max-width: 500px;
             margin: 2rem;
-            box-shadow: var(--shadow-2xl);
-            animation: successSlideIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .success-content::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
-            animation: shimmer 2s ease-in-out infinite;
-        }
-
-        @keyframes successSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px) scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
+            box-shadow: var(--shadow-xl);
+            animation: slideIn 0.6s ease;
         }
 
         .success-emoji {
             font-size: 4rem;
             margin-bottom: var(--space-lg);
-            animation: bounce 1s ease-in-out infinite alternate;
-            position: relative;
-            z-index: 1;
         }
 
         .success-title {
             margin-bottom: var(--space-lg);
             font-size: 1.8rem;
-            font-weight: var(--font-weight-bold);
-            position: relative;
-            z-index: 1;
+            font-weight: 700;
         }
 
         .success-selection {
             font-size: 1.2rem;
             margin-bottom: var(--space-sm);
-            font-weight: var(--font-weight-semibold);
-            position: relative;
-            z-index: 1;
+            font-weight: 600;
         }
 
         .success-product {
             font-size: 1.1rem;
             margin-bottom: var(--space-lg);
             opacity: 0.9;
-            position: relative;
-            z-index: 1;
         }
 
         .success-message {
             margin-bottom: var(--space-lg);
             opacity: 0.9;
             font-size: 1rem;
-            position: relative;
-            z-index: 1;
         }
 
         .success-button {
@@ -1967,12 +967,10 @@
             border: 2px solid white;
             padding: var(--space-md) var(--space-xl);
             border-radius: var(--radius-full);
-            font-weight: var(--font-weight-semibold);
+            font-weight: 600;
             cursor: pointer;
-            transition: var(--transition-bounce);
+            transition: var(--transition);
             font-size: 1rem;
-            position: relative;
-            z-index: 1;
         }
 
         .success-button:hover {
@@ -1981,11 +979,11 @@
             transform: scale(1.05);
         }
 
-        /* ===== ANIMATIONS ===== */
+        /* Animations */
         .fade-up {
             opacity: 0;
             transform: translateY(50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.8s ease;
         }
 
         .fade-up.visible {
@@ -1996,7 +994,7 @@
         .fade-left {
             opacity: 0;
             transform: translateX(-50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.8s ease;
         }
 
         .fade-left.visible {
@@ -2007,7 +1005,7 @@
         .fade-right {
             opacity: 0;
             transform: translateX(50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.8s ease;
         }
 
         .fade-right.visible {
@@ -2015,44 +1013,23 @@
             transform: translateX(0);
         }
 
-        .scale-up {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        .scale-up.visible {
-            opacity: 1;
-            transform: scale(1);
+        @keyframes slideIn {
+            from { transform: translateY(-50px) scale(0.9); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
         }
 
-        /* Staggered animations */
-        .fade-up:nth-child(1) { transition-delay: 0ms; }
-        .fade-up:nth-child(2) { transition-delay: 150ms; }
-        .fade-up:nth-child(3) { transition-delay: 300ms; }
-        .fade-up:nth-child(4) { transition-delay: 450ms; }
-        .fade-up:nth-child(5) { transition-delay: 600ms; }
-
-        /* ===== RESPONSIVE DESIGN ===== */
+        /* Responsive Design */
         @media (max-width: 1024px) {
             .container {
                 padding: 0 var(--space-md);
             }
             
-            .section {
-                padding: var(--space-2xl) 0;
-            }
-
-            .collections-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                gap: var(--space-xl);
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: var(--space-xl);
-            }
-
+            .hero-content,
             .about-content,
             .contact-content {
                 grid-template-columns: 1fr;
@@ -2060,169 +1037,75 @@
                 text-align: center;
             }
 
+            .hero-visual {
+                order: -1;
+            }
+
             .features {
                 text-align: left;
-            }
-
-            .visual-placeholder {
-                width: 350px;
-                height: 350px;
-            }
-
-            .contact-placeholder {
-                height: 350px;
-            }
-
-            .hero-content {
-                gap: var(--space-2xl);
-            }
-            
-            .hero-visual {
-                height: 500px;
-            }
-
-            .modal-categories, .modal-subcategories {
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             }
         }
 
         @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: var(--space-lg);
+                gap: var(--space-sm);
+                border-top: 1px solid var(--border-light);
+                box-shadow: var(--shadow-lg);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
             .hero {
                 padding-top: 120px;
                 min-height: auto;
                 padding-bottom: var(--space-3xl);
             }
-            
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: var(--space-2xl);
-                text-align: center;
-            }
-            
-            .hero-visual {
-                height: 350px;
-                order: -1;
-            }
-            
+
             .hero-stats {
                 justify-content: center;
                 gap: var(--space-xl);
             }
-            
+
             .hero-buttons {
                 justify-content: center;
+                flex-direction: column;
+                align-items: center;
             }
 
-            .collections-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-xl);
+            .btn {
+                width: 100%;
+                max-width: 280px;
             }
 
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-xl);
-            }
-            
-            .product-category {
-                padding: var(--space-lg);
-            }
-
-            .modal-content {
-                width: 98%;
-                margin: 5% auto;
-            }
-            
-            .modal-header {
-                padding: var(--space-lg);
-            }
-            
-            .modal-body {
-                padding: var(--space-lg);
-            }
-            
-            .modal-categories, .modal-subcategories {
-                grid-template-columns: 1fr;
-                gap: var(--space-md);
-            }
-
-            .visual-placeholder {
-                width: 300px;
-                height: 300px;
-            }
-
-            .contact-placeholder {
-                height: 300px;
-            }
-
-            .gallery-nav {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .section {
-                padding: var(--space-xl) 0;
-            }
-            
-            .section-header {
-                margin-bottom: var(--space-2xl);
-            }
-            
-            .hero-container {
-                padding: 0 var(--space-md);
-            }
-            
-            .nav-container {
-                padding: var(--space-sm) var(--space-md);
+            .hero-stats {
+                flex-direction: column;
+                gap: var(--space-lg);
+                align-items: center;
             }
 
             .feature {
                 flex-direction: column;
                 text-align: center;
                 gap: var(--space-md);
-                padding: var(--space-sm);
             }
 
             .feature:hover {
                 transform: translateY(-5px);
-            }
-
-            .modal-category, .modal-subcategory {
-                padding: var(--space-md);
-            }
-
-            .modal-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-
-            .visual-placeholder {
-                width: 250px;
-                height: 250px;
-            }
-
-            .contact-placeholder {
-                height: 250px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: var(--space-md);
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 280px;
-            }
-            
-            .hero-stats {
-                flex-direction: column;
-                gap: var(--space-lg);
-                align-items: center;
             }
 
             .contact-methods {
@@ -2239,140 +1122,69 @@
                 height: 50px;
                 font-size: 1.2rem;
             }
-
-            .gallery-main {
-                padding: var(--space-md);
-            }
-
-            .gallery-nav {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-
-            .gallery-prev {
-                left: var(--space-md);
-            }
-
-            .gallery-next {
-                right: var(--space-md);
-            }
         }
 
-        /* ===== KEYFRAME ANIMATIONS ===== */
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
+        @media (max-width: 480px) {
+            .section {
+                padding: var(--space-xl) 0;
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
 
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
+            .nav-container {
+                padding: var(--space-sm) var(--space-md);
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
+            .hero-container {
+                padding: 0 var(--space-md);
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
-        @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
+            .category-tabs {
+                gap: var(--space-sm);
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+
+            .tab-btn {
+                padding: var(--space-sm) var(--space-md);
+                font-size: 0.9rem;
             }
-        }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-15px); }
-            60% { transform: translateY(-8px); }
-        }
-
-        /* ===== ACCESSIBILITY IMPROVEMENTS ===== */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+            .product-showcase {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
             }
         }
 
         /* Focus styles for accessibility */
         .btn:focus,
-        .card-button:focus,
         .nav-link:focus,
         .cta-button:focus,
-        .modal-category:focus,
-        .modal-subcategory:focus,
         .contact-method:focus,
-        .product-category:focus,
-        .collection-card:focus,
-        .gallery-nav:focus,
-        .gallery-close:focus {
+        .product-item:focus,
+        .tab-btn:focus,
+        .phrase-display:focus,
+        .showcase-dot:focus {
             outline: 2px solid var(--primary);
             outline-offset: 2px;
-        }
-
-        /* Screen reader only text */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <nav class="navbar" role="navigation">
         <div class="nav-container">
             <div class="nav-brand">
                 <span class="brand-name">PrintsByPeter</span>
-                <span class="brand-tagline">Seattle Inspired</span>
+                <span class="brand-tagline">Hilarious & Ethical</span>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#collections" class="nav-link">Collections</a></li>
                 <li><a href="#products" class="nav-link">Products</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-cta">
-                <button class="cta-button" onclick="scrollToSection('collections')" aria-label="Shop now">
-                    Shop Now
-                </button>
+                <button class="cta-button">Shop Now</button>
             </div>
         </div>
     </nav>
@@ -2382,121 +1194,60 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <div class="hero-badge" role="banner">
-                        Seattle-based Designer
+                    <div class="hero-badge">
+                        Hilarious & Ethically Made
                     </div>
                     <h1 class="hero-title">
-                        Premium Custom Apparel
-                        <br>for <span class="text-highlight">Seattle</span> Enthusiasts
+                        Hilarious Custom T-Shirts
+                        <br>That Make <span class="text-highlight">Everyone</span> Laugh
                     </h1>
                     <p class="hero-description">
-                        High-quality. Locally-inspired. Built with pride. We help Seattle lovers 
-                        express their Pacific Northwest spirit through premium custom apparel and accessories.
+                        Witty phrases. Ethical production. Premium quality. We create custom apparel 
+                        that spreads joy while supporting fair labor practices and sustainable materials.
                     </p>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary" onclick="scrollToSection('collections')" aria-label="Browse collections">
-                            Shop Collections
-                        </button>
-                        <button class="btn btn-secondary" onclick="scrollToSection('products')" aria-label="View our products">
-                            See Our Work
-                        </button>
+                        <button class="btn btn-primary">Shop Now</button>
+                        <button class="btn btn-secondary">Why Ethical?</button>
                     </div>
-                    <div class="hero-stats" role="region" aria-label="Company statistics">
+                    <div class="hero-stats">
                         <div class="stat">
-                            <div class="stat-number">3</div>
-                            <div class="stat-label">Design Collections</div>
+                            <div class="stat-number" data-target="500">0</div>
+                            <div class="stat-label">Witty Phrases</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">15+</div>
+                            <div class="stat-number" data-target="15">0</div>
                             <div class="stat-label">Product Types</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Seattle Pride</div>
+                            <div class="stat-number" data-target="100">0</div>
+                            <div class="stat-label">Ethically Made</div>
                         </div>
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="product-mockup">
-                        <div class="mockup-item mockup-hoodie" role="img" aria-label="Premium hoodies mockup">
-                            <i class="fas fa-tshirt" aria-hidden="true"></i>
-                            <span>Premium Hoodies</span>
+                    <div class="phrase-display">
+                        <div class="phrase-card active">
+                            <h3>"Placeholder Phrase 1"</h3>
+                            <span class="phrase-category">Witty Category</span>
                         </div>
-                        <div class="mockup-item mockup-hat" role="img" aria-label="Quality headwear mockup">
-                            <i class="fas fa-hat-cowboy" aria-hidden="true"></i>
-                            <span>Quality Headwear</span>
+                        <div class="phrase-card">
+                            <h3>"Placeholder Phrase 2"</h3>
+                            <span class="phrase-category">Sarcastic Type</span>
                         </div>
-                        <div class="mockup-item mockup-mug" role="img" aria-label="Custom accessories mockup">
-                            <i class="fas fa-mug-hot" aria-hidden="true"></i>
-                            <span>Custom Accessories</span>
+                        <div class="phrase-card">
+                            <h3>"Placeholder Phrase 3"</h3>
+                            <span class="phrase-category">Relatable Humor</span>
                         </div>
-                        <div class="design-elements" aria-hidden="true">
-                            <div class="element element-1"></div>
-                            <div class="element element-2"></div>
-                            <div class="element element-3"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Collections Section -->
-    <section id="collections" class="section collections">
-        <div class="container">
-            <div class="section-header fade-up">
-                <h2 class="section-title">Choose Your Collection</h2>
-                <p class="section-subtitle">Three unique design styles inspired by Seattle's most iconic landmarks and culture</p>
-            </div>
-            <div class="collections-grid">
-                <div class="collection-card fade-up" data-collection="collection1" tabindex="0" role="button" aria-label="Space Needle Collection">
-                    <div class="card-image space-needle-gradient">
-                        <div class="card-overlay">
-                            <div class="card-icons" aria-hidden="true">
-                                <i class="fas fa-building"></i>
-                                <i class="fas fa-broadcast-tower"></i>
-                                <i class="fas fa-city"></i>
-                            </div>
+                        <div class="phrase-card">
+                            <h3>"Placeholder Phrase 4"</h3>
+                            <span class="phrase-category">Random & Absurd</span>
                         </div>
                     </div>
-                    <div class="card-content">
-                        <h3>Space Needle Collection</h3>
-                        <p>Iconic Space Needle designs capturing Seattle's architectural beauty and urban skyline</p>
-                        <button class="card-button">Select Collection</button>
-                    </div>
-                </div>
-
-                <div class="collection-card fade-up" data-collection="collection2" tabindex="0" role="button" aria-label="Lake Union Collection">
-                    <div class="card-image lake-union-gradient">
-                        <div class="card-overlay">
-                            <div class="card-icons" aria-hidden="true">
-                                <i class="fas fa-anchor"></i>
-                                <i class="fas fa-water"></i>
-                                <i class="fas fa-mountain"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Lake Union Collection</h3>
-                        <p>Sailboat and Lake Union inspired designs celebrating Seattle's waterfront lifestyle</p>
-                        <button class="card-button">Select Collection</button>
-                    </div>
-                </div>
-
-                <div class="collection-card fade-up" data-collection="collection3" tabindex="0" role="button" aria-label="Coffee Culture Collection">
-                    <div class="card-image culture-gradient">
-                        <div class="card-overlay">
-                            <div class="card-icons" aria-hidden="true">
-                                <i class="fas fa-coffee"></i>
-                                <i class="fas fa-music"></i>
-                                <i class="fas fa-palette"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Coffee Culture Collection</h3>
-                        <p>Seattle coffee culture and local lifestyle designs reflecting our city's creative spirit</p>
-                        <button class="card-button">Select Collection</button>
+                    <div class="showcase-controls">
+                        <button class="showcase-dot active" data-index="0"></button>
+                        <button class="showcase-dot" data-index="1"></button>
+                        <button class="showcase-dot" data-index="2"></button>
+                        <button class="showcase-dot" data-index="3"></button>
                     </div>
                 </div>
             </div>
@@ -2507,63 +1258,22 @@
     <section id="products" class="section products">
         <div class="container">
             <div class="section-header fade-up">
-                <h2 class="section-title">Our Products</h2>
-                <p class="section-subtitle">Premium quality items available across all collections</p>
+                <h2 class="section-title">Browse by Category</h2>
+                <p class="section-subtitle">Find the perfect item for your witty phrase</p>
             </div>
-            <div class="products-grid">
-                <div class="product-category fade-up" data-category="sweatshirts" tabindex="0" role="button" aria-label="View sweatshirts">
-                    <div class="category-icon" aria-hidden="true">
-                        <i class="fas fa-vest"></i>
-                    </div>
-                    <h3>Sweatshirts</h3>
-                    <ul class="product-list">
-                        <li>Premium Hoodies</li>
-                        <li>Classic Crewnecks</li>
-                    </ul>
-                    <p class="category-desc">Comfort meets style in our premium sweatshirt collection.</p>
-                </div>
+            
+            <!-- Category Tabs -->
+            <div class="category-tabs fade-up">
+                <button class="tab-btn active" data-category="all">All Products</button>
+                <button class="tab-btn" data-category="shirts">T-Shirts</button>
+                <button class="tab-btn" data-category="sweatshirts">Sweatshirts</button>
+                <button class="tab-btn" data-category="hats">Hats</button>
+                <button class="tab-btn" data-category="accessories">Accessories</button>
+            </div>
 
-                <div class="product-category fade-up" data-category="hats" tabindex="0" role="button" aria-label="View hats">
-                    <div class="category-icon" aria-hidden="true">
-                        <i class="fas fa-hat-wizard"></i>
-                    </div>
-                    <h3>Hats</h3>
-                    <ul class="product-list">
-                        <li>Mesh Snapbacks</li>
-                        <li>Baseball Caps</li>
-                        <li>Flattop Caps</li>
-                        <li>Cozy Beanies</li>
-                        <li>Bucket Hats</li>
-                    </ul>
-                    <p class="category-desc">Top off your look with our diverse headwear selection.</p>
-                </div>
-
-                <div class="product-category fade-up" data-category="shirts" tabindex="0" role="button" aria-label="View shirts">
-                    <div class="category-icon" aria-hidden="true">
-                        <i class="fas fa-tshirt"></i>
-                    </div>
-                    <h3>Shirts</h3>
-                    <ul class="product-list">
-                        <li>Premium T-Shirts</li>
-                        <li>Summer Tank Tops</li>
-                    </ul>
-                    <p class="category-desc">Essential pieces designed for year-round comfort.</p>
-                </div>
-
-                <div class="product-category fade-up" data-category="accessories" tabindex="0" role="button" aria-label="View accessories">
-                    <div class="category-icon" aria-hidden="true">
-                        <i class="fas fa-shopping-bag"></i>
-                    </div>
-                    <h3>Accessories</h3>
-                    <ul class="product-list">
-                        <li>Custom Mugs</li>
-                        <li>Phone Cases</li>
-                        <li>Cozy Blankets</li>
-                        <li>Tote Bags</li>
-                        <li>Mouse Pads</li>
-                    </ul>
-                    <p class="category-desc">Complete your Seattle-inspired lifestyle.</p>
-                </div>
+            <!-- Product Grid -->
+            <div class="product-showcase" id="product-showcase">
+                <!-- Products will be dynamically loaded here -->
             </div>
         </div>
     </section>
@@ -2573,49 +1283,59 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text fade-left">
-                    <h2>Crafting Seattle's Story</h2>
+                    <h2>Spreading Laughs, Ethically</h2>
                     <p class="lead-text">
-                        We're passionate about capturing the essence of Seattle through thoughtful design and exceptional quality.
+                        We believe humor should also mean fair. Every laugh-inducing design is printed on ethically made, premium quality apparel.
                     </p>
                     <p>
-                        Every piece in our collection tells a story of the Emerald City's unique character, 
-                        from the iconic Space Needle to the serene waters of Lake Union. We believe that what you wear 
-                        should reflect your connection to the places you love.
+                        From witty one-liners to absurd phrases that make people do double-takes, we craft humor 
+                        that brings joy while supporting fair labor practices and sustainable materials. Because making people 
+                        laugh shouldn't come at someone else's expense.
                     </p>
                     <div class="features">
                         <div class="feature">
-                            <div class="feature-icon" aria-hidden="true">
-                                <i class="fas fa-palette"></i>
+                            <div class="feature-icon">
+                                <i class="fas fa-laugh"></i>
                             </div>
                             <div class="feature-text">
-                                <h4>Original Designs</h4>
-                                <p>Unique artwork inspired by Seattle's most beloved landmarks</p>
+                                <h4>Original Humor</h4>
+                                <p>Hand-crafted witty phrases that you won't find anywhere else</p>
                             </div>
                         </div>
                         <div class="feature">
-                            <div class="feature-icon" aria-hidden="true">
-                                <i class="fas fa-star"></i>
+                            <div class="feature-icon">
+                                <i class="fas fa-leaf"></i>
                             </div>
                             <div class="feature-text">
-                                <h4>Premium Quality</h4>
-                                <p>Superior materials and craftsmanship that last</p>
+                                <h4>Ethically Made</h4>
+                                <p>Fair wages, sustainable materials, and transparent supply chains</p>
                             </div>
                         </div>
                         <div class="feature">
-                            <div class="feature-icon" aria-hidden="true">
+                            <div class="feature-icon">
                                 <i class="fas fa-heart"></i>
                             </div>
                             <div class="feature-text">
-                                <h4>Local Pride</h4>
-                                <p>Supporting Pacific Northwest culture and community</p>
+                                <h4>Premium Quality</h4>
+                                <p>Soft, durable fabrics that keep the laughs going wash after wash</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="about-visual fade-right">
-                    <div class="visual-placeholder">
-                        <i class="fas fa-mountain" aria-hidden="true"></i>
-                        <span>Seattle Spirit</span>
+                    <div class="about-illustration">
+                        <div class="illustration-content">
+                            <div class="illustration-icon">
+                                <i class="fas fa-smile-beam"></i>
+                            </div>
+                            <h4>Ethical Humor</h4>
+                            <p>Making people laugh the right way</p>
+                            <div class="illustration-features">
+                                <span>🌱 Sustainable</span>
+                                <span>✊ Fair Trade</span>
+                                <span>😄 Always Hilarious</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2627,33 +1347,33 @@
         <div class="container">
             <div class="section-header fade-up">
                 <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Ready to bring your Seattle spirit to life? We'd love to hear from you!</p>
+                <p class="section-subtitle">Ready to spread some laughs? Got a witty idea? Let's make it happen!</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info fade-left">
                     <h3>Contact Information</h3>
                     <div class="contact-methods">
-                        <div class="contact-method" tabindex="0" role="button" aria-label="Email us">
+                        <div class="contact-method">
                             <div class="contact-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="contact-details">
                                 <h4>Email Us</h4>
-                                <a href="mailto:jackodseattle@gmail.com">jackodseattle@gmail.com</a>
+                                <span>jackodseattle@gmail.com</span>
                             </div>
                         </div>
                         
-                        <div class="contact-method" tabindex="0" role="button" aria-label="Call us">
+                        <div class="contact-method">
                             <div class="contact-icon">
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div class="contact-details">
                                 <h4>Call Us</h4>
-                                <a href="tel:+12063006614">(206) 300-6614</a>
+                                <span>(206) 300-6614</span>
                             </div>
                         </div>
                         
-                        <div class="contact-method" tabindex="0" role="button" aria-label="Our location">
+                        <div class="contact-method">
                             <div class="contact-icon">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
@@ -2665,299 +1385,101 @@
                     </div>
                 </div>
                 <div class="contact-visual fade-right">
-                    <div class="contact-placeholder">
-                        <i class="fas fa-handshake" aria-hidden="true"></i>
-                        <div class="title">Let's Connect</div>
-                        <div class="subtitle">We're here to help bring your vision to life with custom Seattle-inspired designs</div>
+                    <div class="contact-illustration">
+                        <div class="illustration-content">
+                            <div class="illustration-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h4>Let's Create Something Great</h4>
+                            <p>Got a hilarious idea? We'd love to help bring your witty phrases to life on ethical apparel</p>
+                            <div class="contact-features">
+                                <div class="contact-feature">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span>Custom Ideas</span>
+                                </div>
+                                <div class="contact-feature">
+                                    <i class="fas fa-handshake"></i>
+                                    <span>Collaboration</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal for Category Selection -->
-    <div id="category-modal" class="modal" role="dialog" aria-labelledby="category-modal-title" aria-hidden="true">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="category-modal-title">Choose Your Product Category</h2>
-                <button class="close-modal" aria-label="Close modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="selected-collection" id="selected-collection-info">
-                    <!-- Collection info will be inserted here -->
-                </div>
-                <div class="modal-categories" id="modal-categories" role="grid">
-                    <!-- Categories will be populated by JavaScript -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Subcategory Selection -->
-    <div id="subcategory-modal" class="modal" role="dialog" aria-labelledby="subcategory-modal-title" aria-hidden="true">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="subcategory-modal-title">Choose Your Product</h2>
-                <button class="close-modal" aria-label="Close modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="selected-collection" id="selection-summary">
-                    <!-- Selection summary will be inserted here -->
-                </div>
-                <div class="modal-subcategories" id="modal-subcategories" role="grid">
-                    <!-- Subcategories will be populated by JavaScript -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Image Gallery Modal -->
-    <div id="gallery-modal" class="gallery-modal" role="dialog" aria-labelledby="gallery-title" aria-hidden="true">
-        <div class="gallery-content">
-            <div class="gallery-header">
-                <h2 id="gallery-title" class="gallery-title">Product Gallery</h2>
-                <button class="gallery-close" aria-label="Close gallery">&times;</button>
-            </div>
-            <div class="gallery-main">
-                <img id="gallery-image" class="gallery-image" src="" alt="Product image">
-                <button class="gallery-nav gallery-prev" aria-label="Previous image">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="gallery-nav gallery-next" aria-label="Next image">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // ===== GLOBAL VARIABLES =====
-        let selectedCollection = null;
-        let selectedCategory = null;
-        let lastScrollY = window.scrollY;
-        let currentGalleryImages = [];
-        let currentImageIndex = 0;
+        // Product data
+        const PRODUCT_DATA = [
+            { category: 'shirts', type: 'Premium T-Shirt', phrase: '"Placeholder Phrase 1"', price: '$24.99', icon: 'fas fa-tshirt' },
+            { category: 'shirts', type: 'Classic Tee', phrase: '"Placeholder Phrase 2"', price: '$22.99', icon: 'fas fa-tshirt' },
+            { category: 'shirts', type: 'Tank Top', phrase: '"Placeholder Phrase 3"', price: '$19.99', icon: 'fas fa-vest' },
+            { category: 'shirts', type: 'Long Sleeve', phrase: '"Placeholder Phrase 4"', price: '$26.99', icon: 'fas fa-tshirt' },
+            { category: 'sweatshirts', type: 'Premium Hoodie', phrase: '"Placeholder Phrase 5"', price: '$42.99', icon: 'fas fa-vest' },
+            { category: 'sweatshirts', type: 'Crewneck', phrase: '"Placeholder Phrase 6"', price: '$38.99', icon: 'fas fa-user-tie' },
+            { category: 'sweatshirts', type: 'Zip Hoodie', phrase: '"Placeholder Phrase 7"', price: '$44.99', icon: 'fas fa-vest' },
+            { category: 'hats', type: 'Baseball Cap', phrase: '"Placeholder Phrase 8"', price: '$18.99', icon: 'fas fa-hat-wizard' },
+            { category: 'hats', type: 'Snapback', phrase: '"Placeholder Phrase 9"', price: '$21.99', icon: 'fas fa-hat-wizard' },
+            { category: 'hats', type: 'Beanie', phrase: '"Placeholder Phrase 10"', price: '$16.99', icon: 'fas fa-hat-wizard' },
+            { category: 'accessories', type: 'Coffee Mug', phrase: '"Placeholder Phrase 11"', price: '$12.99', icon: 'fas fa-mug-hot' },
+            { category: 'accessories', type: 'Phone Case', phrase: '"Placeholder Phrase 12"', price: '$15.99', icon: 'fas fa-mobile-alt' },
+            { category: 'accessories', type: 'Tote Bag', phrase: '"Placeholder Phrase 13"', price: '$14.99', icon: 'fas fa-shopping-bag' },
+            { category: 'accessories', type: 'Sticker Pack', phrase: '"Placeholder Phrase 14"', price: '$8.99', icon: 'fas fa-star' }
+        ];
 
-        // Categories and subcategories data
-        const CATEGORIES = {
-            'sweatshirts': {
-                'name': 'Sweatshirts',
-                'icon': 'fas fa-vest',
-                'subcategories': [
-                    { 
-                        id: 'hoodies', 
-                        name: 'Premium Hoodies', 
-                        icon: 'fas fa-vest',
-                        images: [
-                            'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800',
-                            'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-                            'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800'
-                        ]
-                    },
-                    { 
-                        id: 'crewnecks', 
-                        name: 'Classic Crewnecks', 
-                        icon: 'fas fa-user-tie',
-                        images: [
-                            'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-                            'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800'
-                        ]
-                    }
-                ]
-            },
-            'hats': {
-                'name': 'Hats',
-                'icon': 'fas fa-hat-wizard',
-                'subcategories': [
-                    { 
-                        id: 'mesh-snapback', 
-                        name: 'Mesh Snapback', 
-                        icon: 'fas fa-hat-wizard',
-                        images: [
-                            'https://images.unsplash.com/photo-1521369909029-2afed882baee?w=800',
-                            'https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=800'
-                        ]
-                    },
-                    { 
-                        id: 'baseball-cap', 
-                        name: 'Baseball Cap', 
-                        icon: 'fas fa-hat-wizard',
-                        images: [
-                            'https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=800'
-                        ]
-                    },
-                    { 
-                        id: 'flattop', 
-                        name: 'Flattop', 
-                        icon: 'fas fa-hat-cowboy',
-                        images: [
-                            'https://images.unsplash.com/photo-1521369909029-2afed882baee?w=800'
-                        ]
-                    },
-                    { 
-                        id: 'beanie', 
-                        name: 'Beanie', 
-                        icon: 'fas fa-hat-wizard',
-                        images: [
-                            'https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=800'
-                        ]
-                    },
-                    { 
-                        id: 'bucket-hat', 
-                        name: 'Bucket Hat', 
-                        icon: 'fas fa-hat-cowboy',
-                        images: [
-                            'https://images.unsplash.com/photo-1521369909029-2afed882baee?w=800'
-                        ]
-                    }
-                ]
-            },
-            'shirts': {
-                'name': 'Shirts',
-                'icon': 'fas fa-tshirt',
-                'subcategories': [
-                    { 
-                        id: 'tanktop', 
-                        name: 'Tank Top', 
-                        icon: 'fas fa-running',
-                        images: [
-                            'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800'
-                        ]
-                    },
-                    { 
-                        id: 't-shirts', 
-                        name: 'T-Shirts', 
-                        icon: 'fas fa-tshirt',
-                        images: [
-                            'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800',
-                            'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800'
-                        ]
-                    }
-                ]
-            },
-            'accessories': {
-                'name': 'Accessories',
-                'icon': 'fas fa-shopping-bag',
-                'subcategories': [
-                    { 
-                        id: 'mugs', 
-                        name: 'Custom Mugs', 
-                        icon: 'fas fa-mug-hot',
-                        images: [
-                            'https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=800'
-                        ]
-                    },
-                    { 
-                        id: 'phone-cases', 
-                        name: 'Phone Cases', 
-                        icon: 'fas fa-mobile-alt',
-                        images: [
-                            'https://images.unsplash.com/photo-1556617536-4b0b3d8276b5?w=800'
-                        ]
-                    },
-                    { 
-                        id: 'blankets', 
-                        name: 'Cozy Blankets', 
-                        icon: 'fas fa-bed',
-                        images: [
-                            'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800'
-                        ]
-                    },
-                    { 
-                        id: 'tote-bag', 
-                        name: 'Tote Bags', 
-                        icon: 'fas fa-shopping-bag',
-                        images: [
-                            'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800'
-                        ]
-                    },
-                    { 
-                        id: 'mousepads', 
-                        name: 'Mouse Pads', 
-                        icon: 'fas fa-mouse',
-                        images: [
-                            'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800'
-                        ]
-                    }
-                ]
-            }
-        };
+        // Global variables
+        let currentPhraseIndex = 0;
+        let phraseInterval;
+        let currentCategory = 'all';
 
-        const COLLECTIONS = {
-            'collection1': {
-                name: 'Space Needle Collection',
-                description: 'Iconic Space Needle designs capturing Seattle\'s architectural beauty and urban skyline',
-                theme: 'Space Needle & Skylines',
-                icons: ['🗼', '🏙️', '✨']
-            },
-            'collection2': {
-                name: 'Lake Union Collection',
-                description: 'Sailboat and Lake Union inspired designs celebrating Seattle\'s waterfront lifestyle',
-                theme: 'Lake Union & Sailboats',
-                icons: ['⛵', '🌊', '🏔️']
-            },
-            'collection3': {
-                name: 'Coffee Culture Collection',
-                description: 'Seattle coffee culture and local lifestyle designs reflecting our city\'s creative spirit',
-                theme: 'Coffee Culture & Local Life',
-                icons: ['☕', '🎵', '🎨']
-            }
-        };
-
-        // Sample gallery images for product categories
-        const SAMPLE_GALLERIES = {
-            'sweatshirts': [
-                'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800',
-                'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
-                'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800'
-            ],
-            'hats': [
-                'https://images.unsplash.com/photo-1521369909029-2afed882baee?w=800',
-                'https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=800'
-            ],
-            'shirts': [
-                'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800',
-                'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800'
-            ],
-            'accessories': [
-                'https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?w=800',
-                'https://images.unsplash.com/photo-1556617536-4b0b3d8276b5?w=800',
-                'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800'
-            ]
-        };
-
-        // DOM Elements
-        const navbar = document.querySelector('.navbar');
-        const collectionCards = document.querySelectorAll('.collection-card');
-        const productCategories = document.querySelectorAll('.product-category');
-        const categoryModal = document.getElementById('category-modal');
-        const subcategoryModal = document.getElementById('subcategory-modal');
-        const galleryModal = document.getElementById('gallery-modal');
-        const closeModalBtns = document.querySelectorAll('.close-modal');
-        const galleryClose = document.querySelector('.gallery-close');
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-
-        // ===== INITIALIZATION =====
+        // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             initializeScrollAnimations();
             initializeNavigation();
-            initializeCollectionCards();
-            initializeProductCategories();
-            initializeModals();
-            initializeGallery();
-            initializeSmoothScrolling();
+            initializePhraseCarousel();
+            initializeCategoryTabs();
+            initializeProductShowcase();
             initializeMobileMenu();
-            initializeAccessibility();
+            initializeButtons();
             initializeContactMethods();
-            initializeAllButtons(); // Initialize all button functionality
+            initializeStatsCounter();
         });
 
-        // ===== SCROLL ANIMATIONS =====
+        // Stats counter animation
+        function initializeStatsCounter() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.dataset.target);
+                const increment = target / 50; // Animation duration control
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                        // Add the suffix after counting is done
+                        if (target === 500) {
+                            stat.textContent = target + '+';
+                        } else if (target === 15) {
+                            stat.textContent = target + '+';
+                        } else if (target === 100) {
+                            stat.textContent = target + '%';
+                        }
+                    } else {
+                        stat.textContent = Math.floor(current);
+                    }
+                }, 30); // Speed of counting
+            });
+        }
+
+        // Scroll animations
         function initializeScrollAnimations() {
             const observerOptions = {
                 threshold: 0.1,
-                rootMargin: '0px 0px -80px 0px'
+                rootMargin: '0px 0px -50px 0px'
             };
 
             const observer = new IntersectionObserver(function(entries) {
@@ -2969,32 +1491,22 @@
                 });
             }, observerOptions);
 
-            document.querySelectorAll('.fade-up, .fade-left, .fade-right, .scale-up').forEach(el => {
+            document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => {
                 observer.observe(el);
             });
         }
 
-        // ===== NAVIGATION =====
+        // Navigation
         function initializeNavigation() {
+            const navbar = document.querySelector('.navbar');
+            
             window.addEventListener('scroll', function() {
-                const currentScrollY = window.scrollY;
-                
-                if (currentScrollY > 100) {
+                if (window.scrollY > 100) {
                     navbar.classList.add('scrolled');
                 } else {
                     navbar.classList.remove('scrolled');
                 }
-
-                if (window.innerWidth > 768) {
-                    if (currentScrollY > lastScrollY && currentScrollY > 200) {
-                        navbar.classList.add('hidden');
-                    } else {
-                        navbar.classList.remove('hidden');
-                    }
-                }
-                
-                lastScrollY = currentScrollY;
-            }, { passive: true });
+            });
 
             // Active section highlighting
             const sections = document.querySelectorAll('section[id]');
@@ -3015,50 +1527,189 @@
                         link.classList.add('active');
                     }
                 });
-            }, { passive: true });
+            });
         }
 
-        // ===== MOBILE MENU =====
+        // Mobile menu
         function initializeMobileMenu() {
-            mobileMenuToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                const isExpanded = navMenu.classList.contains('active');
-                mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
-                
-                const icon = mobileMenuToggle.querySelector('i');
-                icon.className = isExpanded ? 'fas fa-times' : 'fas fa-bars';
-            });
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    const isActive = navMenu.classList.contains('active');
+                    const icon = mobileToggle.querySelector('i');
+                    icon.className = isActive ? 'fas fa-times' : 'fas fa-bars';
+                });
+            }
 
+            // Close menu when clicking nav links
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', () => {
                     navMenu.classList.remove('active');
-                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                    const icon = mobileMenuToggle.querySelector('i');
+                    const icon = mobileToggle.querySelector('i');
                     icon.className = 'fas fa-bars';
                 });
             });
         }
 
-        // ===== SMOOTH SCROLLING =====
-        function initializeSmoothScrolling() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        const headerOffset = 100;
-                        const elementPosition = target.offsetTop;
-                        const offsetPosition = elementPosition - headerOffset;
+        // Phrase carousel
+        function initializePhraseCarousel() {
+            const phraseCards = document.querySelectorAll('.phrase-card');
+            const dots = document.querySelectorAll('.showcase-dot');
+            
+            if (phraseCards.length === 0 || dots.length === 0) return;
+            
+            // Dot click handlers
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(phraseInterval);
+                    showPhrase(index);
+                    startAutoRotation();
+                });
+            });
+            
+            // Start auto-rotation
+            startAutoRotation();
+            
+            // Pause on hover
+            const phraseDisplay = document.querySelector('.phrase-display');
+            if (phraseDisplay) {
+                phraseDisplay.addEventListener('mouseenter', () => {
+                    clearInterval(phraseInterval);
+                });
+                
+                phraseDisplay.addEventListener('mouseleave', () => {
+                    startAutoRotation();
+                });
+            }
+        }
+        
+        function startAutoRotation() {
+            const phraseCards = document.querySelectorAll('.phrase-card');
+            if (phraseCards.length > 0) {
+                phraseInterval = setInterval(() => {
+                    currentPhraseIndex = (currentPhraseIndex + 1) % phraseCards.length;
+                    showPhrase(currentPhraseIndex);
+                }, 3000);
+            }
+        }
+        
+        function showPhrase(index) {
+            const phraseCards = document.querySelectorAll('.phrase-card');
+            const dots = document.querySelectorAll('.showcase-dot');
+            
+            phraseCards.forEach((card, i) => {
+                card.classList.toggle('active', i === index);
+            });
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            
+            currentPhraseIndex = index;
+        }
 
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
+        // Category tabs
+        function initializeCategoryTabs() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    console.log('Tab clicked:', category); // Debug log
+                    setActiveTab(category);
+                    filterProducts(category);
                 });
             });
         }
+        
+        function setActiveTab(category) {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns.forEach(btn => {
+                if (btn.dataset.category === category) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            currentCategory = category;
+            console.log('Active tab set to:', category); // Debug log
+        }
+        
+        function filterProducts(category) {
+            const productItems = document.querySelectorAll('.product-item');
+            console.log('Filtering products for category:', category); // Debug log
+            console.log('Found product items:', productItems.length); // Debug log
+            
+            productItems.forEach(item => {
+                const itemCategory = item.dataset.category;
+                console.log('Item category:', itemCategory, 'Target category:', category); // Debug log
+                
+                if (category === 'all' || itemCategory === category) {
+                    item.style.display = 'block';
+                    item.classList.remove('hidden');
+                } else {
+                    item.style.display = 'none';
+                    item.classList.add('hidden');
+                }
+            });
+        }
 
+        // Product showcase
+        function initializeProductShowcase() {
+            const showcase = document.getElementById('product-showcase');
+            
+            if (showcase) {
+                PRODUCT_DATA.forEach(product => {
+                    const productElement = createProductElement(product);
+                    showcase.appendChild(productElement);
+                });
+            }
+        }
+        
+        function createProductElement(product) {
+            const productDiv = document.createElement('div');
+            productDiv.className = 'product-item fade-up';
+            productDiv.dataset.category = product.category;
+            
+            productDiv.innerHTML = `
+                <div class="product-icon">
+                    <i class="${product.icon}"></i>
+                </div>
+                <h3>${product.type}</h3>
+                <div class="product-phrase">${product.phrase}</div>
+                <div class="product-price">${product.price}</div>
+                <div class="subcategory-tag">Ethically Made</div>
+            `;
+            
+            productDiv.addEventListener('click', () => {
+                showSuccessModal(product);
+            });
+            
+            return productDiv;
+        }
+        
+        function showSuccessModal(product) {
+            const successHtml = `
+                <div class="success-modal">
+                    <div class="success-content">
+                        <div class="success-emoji">😄</div>
+                        <h2 class="success-title">Great Choice!</h2>
+                        <p class="success-selection">${product.type}</p>
+                        <p class="success-product">${product.phrase}</p>
+                        <p class="success-message">This design is coming soon! We'll notify you when it's available for ${product.price}.</p>
+                        <button class="success-button" onclick="this.closest('.success-modal').remove();">
+                            Awesome!
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', successHtml);
+        }
+
+        // Smooth scrolling
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
             if (section) {
@@ -3073,76 +1724,31 @@
             }
         }
 
-        // ===== CONTACT METHODS =====
-        function initializeContactMethods() {
-            document.querySelectorAll('.contact-method').forEach(method => {
-                method.addEventListener('click', function() {
-                    const link = this.querySelector('a');
-                    if (link) {
-                        link.click();
-                    }
-                });
-
-                method.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        const link = this.querySelector('a');
-                        if (link) {
-                            link.click();
-                        }
-                    }
-                });
-            });
-        }
-
-        // ===== ENHANCED BUTTON FUNCTIONALITY =====
-        function initializeAllButtons() {
-            // Hero buttons
-            document.querySelectorAll('.btn-primary').forEach(btn => {
-                btn.addEventListener('click', function(e) {
+        // Initialize buttons
+        function initializeButtons() {
+            // All buttons that should scroll to products
+            document.querySelectorAll('.btn-primary, .cta-button').forEach(btn => {
+                btn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    scrollToSection('collections');
+                    scrollToSection('products');
                 });
             });
 
+            // Secondary button goes to about
             document.querySelectorAll('.btn-secondary').forEach(btn => {
-                btn.addEventListener('click', function(e) {
+                btn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    scrollToSection('products');
+                    scrollToSection('about');
                 });
             });
 
-            // CTA buttons
-            document.querySelectorAll('.cta-button').forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    scrollToSection('collections');
-                });
+            // Phrase display clicks go to products
+            document.querySelector('.phrase-display')?.addEventListener('click', () => {
+                scrollToSection('products');
             });
 
-            // Card buttons
-            document.querySelectorAll('.card-button').forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    const card = this.closest('.collection-card');
-                    if (card) {
-                        const collectionId = card.dataset.collection;
-                        selectedCollection = collectionId;
-                        openCategoryModal(collectionId);
-                    }
-                });
-            });
-
-            // Mockup items
-            document.querySelectorAll('.mockup-item').forEach(item => {
-                item.addEventListener('click', function() {
-                    scrollToSection('products');
-                });
-            });
-
-            // All navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(link => {
+            // Nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
@@ -3151,462 +1757,21 @@
             });
         }
 
-        // ===== ACCESSIBILITY =====
-        function initializeAccessibility() {
-            collectionCards.forEach(card => {
-                card.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        this.click();
-                    }
-                });
-            });
-
-            productCategories.forEach(category => {
-                category.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        this.click();
-                    }
+        // Contact methods
+        function initializeContactMethods() {
+            document.querySelectorAll('.contact-method').forEach(method => {
+                method.addEventListener('click', function() {
+                    // No action needed since we removed the links
+                    console.log('Contact method clicked');
                 });
             });
         }
 
-        // ===== PRODUCT CATEGORIES =====
-        function initializeProductCategories() {
-            productCategories.forEach(category => {
-                category.addEventListener('click', function() {
-                    const categoryId = this.dataset.category;
-                    openCategoryGallery(categoryId);
-                });
-            });
-        }
-
-        function openCategoryGallery(categoryId) {
-            const category = CATEGORIES[categoryId];
-            const images = SAMPLE_GALLERIES[categoryId] || [];
-            
-            if (images.length > 0) {
-                openGallery(`${category.name} Gallery`, images);
-            } else {
-                // Fallback: show a demo gallery
-                const demoImages = [
-                    'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800',
-                    'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800'
-                ];
-                openGallery(`${category.name} Demo Gallery`, demoImages);
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', function() {
+            if (phraseInterval) {
+                clearInterval(phraseInterval);
             }
-        }
-
-        // ===== COLLECTION CARDS =====
-        function initializeCollectionCards() {
-            collectionCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-15px) scale(1.02)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-
-                card.addEventListener('click', function() {
-                    const collectionId = this.dataset.collection;
-                    selectedCollection = collectionId;
-                    
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = 'translateY(-15px) scale(1.02)';
-                        openCategoryModal(collectionId);
-                    }, 150);
-                });
-            });
-        }
-
-        function openCategoryModal(collectionId) {
-            const collection = COLLECTIONS[collectionId];
-            
-            const titleElement = document.getElementById('category-modal-title');
-            titleElement.style.transform = 'translateY(-20px)';
-            titleElement.style.opacity = '0';
-            
-            setTimeout(() => {
-                titleElement.textContent = `${collection.name} - Choose Category`;
-                titleElement.style.transform = 'translateY(0)';
-                titleElement.style.opacity = '1';
-            }, 200);
-            
-            renderCollectionPreview(collectionId);
-            renderModalCategories();
-            
-            categoryModal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            categoryModal.setAttribute('aria-hidden', 'false');
-            
-            const modalContent = categoryModal.querySelector('.modal-content');
-            modalContent.style.transform = 'translateY(-50px) scale(0.9)';
-            modalContent.style.opacity = '0';
-            
-            setTimeout(() => {
-                modalContent.style.transform = 'translateY(0) scale(1)';
-                modalContent.style.opacity = '1';
-            }, 100);
-        }
-
-        function renderCollectionPreview(collectionId) {
-            const collection = COLLECTIONS[collectionId];
-            const previewContainer = document.getElementById('selected-collection-info');
-            
-            previewContainer.innerHTML = `
-                <h3>${collection.name}</h3>
-                <p><strong>${collection.theme}</strong></p>
-                <p>${collection.description}</p>
-                <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; font-size: 1.5rem;" aria-hidden="true">
-                    ${collection.icons.map(icon => `<span>${icon}</span>`).join('')}
-                </div>
-            `;
-        }
-
-        function renderModalCategories() {
-            const categoriesContainer = document.getElementById('modal-categories');
-            
-            categoriesContainer.innerHTML = Object.entries(CATEGORIES).map(([categoryId, categoryData]) => `
-                <div class="modal-category" data-category="${categoryId}" tabindex="0" role="gridcell" aria-label="${categoryData.name} category">
-                    <div class="modal-icon" aria-hidden="true">
-                        <i class="${categoryData.icon}"></i>
-                    </div>
-                    <h4>${categoryData.name}</h4>
-                    <p>${categoryData.subcategories.length} items available</p>
-                </div>
-            `).join('');
-            
-            categoriesContainer.querySelectorAll('.modal-category').forEach((category, index) => {
-                category.style.animationDelay = `${index * 100}ms`;
-                category.style.opacity = '0';
-                category.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    category.style.transition = 'all 0.5s ease';
-                    category.style.opacity = '1';
-                    category.style.transform = 'translateY(0)';
-                }, index * 100);
-
-                category.addEventListener('click', function() {
-                    selectCategory(this);
-                });
-
-                category.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        selectCategory(this);
-                    }
-                });
-            });
-        }
-
-        function selectCategory(categoryElement) {
-            const categoryId = categoryElement.dataset.category;
-            selectedCategory = categoryId;
-            
-            categoryElement.style.transform = 'scale(0.95)';
-            categoryElement.style.background = 'var(--gradient-primary)';
-            categoryElement.style.color = 'white';
-            
-            setTimeout(() => {
-                closeModal(categoryModal);
-                setTimeout(() => openSubcategoryModal(categoryId), 300);
-            }, 200);
-        }
-
-        function openSubcategoryModal(categoryId) {
-            const collection = COLLECTIONS[selectedCollection];
-            const category = CATEGORIES[categoryId];
-            
-            document.getElementById('subcategory-modal-title').textContent = `${category.name} - Choose Product`;
-            
-            renderSelectionSummary(selectedCollection, categoryId);
-            renderModalSubcategories(categoryId);
-            
-            subcategoryModal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            subcategoryModal.setAttribute('aria-hidden', 'false');
-        }
-
-        function renderSelectionSummary(collectionId, categoryId) {
-            const collection = COLLECTIONS[collectionId];
-            const category = CATEGORIES[categoryId];
-            const summaryContainer = document.getElementById('selection-summary');
-            
-            summaryContainer.innerHTML = `
-                <h4>${collection.name} × ${category.name}</h4>
-                <p>Select your specific product from the ${category.name.toLowerCase()} category</p>
-                <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; font-size: 1.2rem;" aria-hidden="true">
-                    ${collection.icons.map(icon => `<span>${icon}</span>`).join('')}
-                </div>
-            `;
-        }
-
-        function renderModalSubcategories(categoryId) {
-            const category = CATEGORIES[categoryId];
-            const subcategoriesContainer = document.getElementById('modal-subcategories');
-            
-            subcategoriesContainer.innerHTML = category.subcategories.map(subcategory => `
-                <div class="modal-subcategory" data-subcategory="${subcategory.id}" tabindex="0" role="gridcell" aria-label="${subcategory.name}">
-                    <div class="modal-icon" aria-hidden="true">
-                        <i class="${subcategory.icon}"></i>
-                    </div>
-                    <h4>${subcategory.name}</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-medium); margin-top: 0.5rem;">
-                        ${subcategory.images ? subcategory.images.length : 0} images available
-                    </p>
-                    <button onclick="event.stopPropagation(); openProductGallery('${subcategory.id}', '${categoryId}')" 
-                            style="background: var(--gradient-accent); color: white; border: none; padding: 0.5rem 1rem; border-radius: 0.5rem; margin-top: 0.5rem; cursor: pointer; font-size: 0.8rem;">
-                        View Gallery
-                    </button>
-                </div>
-            `).join('');
-            
-            subcategoriesContainer.querySelectorAll('.modal-subcategory').forEach((subcategory, index) => {
-                subcategory.style.animationDelay = `${index * 100}ms`;
-                subcategory.style.opacity = '0';
-                subcategory.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    subcategory.style.transition = 'all 0.5s ease';
-                    subcategory.style.opacity = '1';
-                    subcategory.style.transform = 'translateY(0)';
-                }, index * 100);
-
-                subcategory.addEventListener('click', function() {
-                    selectSubcategory(this, category);
-                });
-
-                subcategory.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        selectSubcategory(this, category);
-                    }
-                });
-            });
-        }
-
-        function openProductGallery(subcategoryId, categoryId) {
-            const category = CATEGORIES[categoryId];
-            const subcategory = category.subcategories.find(sub => sub.id === subcategoryId);
-            
-            if (subcategory && subcategory.images && subcategory.images.length > 0) {
-                openGallery(`${subcategory.name} Gallery`, subcategory.images);
-            } else {
-                // Fallback with demo images
-                const demoImages = [
-                    'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800',
-                    'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800'
-                ];
-                openGallery(`${subcategory.name} Demo Gallery`, demoImages);
-            }
-        }
-
-        function selectSubcategory(subcategoryElement, category) {
-            const subcategoryId = subcategoryElement.dataset.subcategory;
-            const subcategoryData = category.subcategories.find(sub => sub.id === subcategoryId);
-            
-            subcategoryElement.style.transform = 'scale(0.95)';
-            subcategoryElement.style.background = 'var(--gradient-accent)';
-            subcategoryElement.style.color = 'white';
-            
-            setTimeout(() => {
-                handleFinalSelection(selectedCollection, category.name, subcategoryId, subcategoryData);
-            }, 200);
-        }
-
-        function handleFinalSelection(collectionId, categoryName, subcategoryId, subcategoryData) {
-            const collection = COLLECTIONS[collectionId];
-            
-            closeModal(subcategoryModal);
-            
-            setTimeout(() => {
-                showSuccessModal(collection, categoryName, subcategoryData);
-            }, 300);
-            
-            console.log('Final selection:', {
-                collection: collection,
-                category: categoryName,
-                subcategory: subcategoryData
-            });
-        }
-
-        function showSuccessModal(collection, categoryName, subcategoryData) {
-            const successHtml = `
-                <div class="success-modal">
-                    <div class="success-content">
-                        <div class="success-emoji">🎉</div>
-                        <h2 class="success-title">Perfect Choice!</h2>
-                        <p class="success-selection">${collection.name}</p>
-                        <p class="success-product">${subcategoryData.name}</p>
-                        <p class="success-message">Coming Soon! We'll notify you when this product is available.</p>
-                        <button class="success-button" onclick="this.closest('.success-modal').remove(); document.body.style.overflow = 'auto';" aria-label="Close success message">
-                            Awesome!
-                        </button>
-                    </div>
-                </div>
-            `;
-            document.body.insertAdjacentHTML('beforeend', successHtml);
-        }
-
-        // ===== IMAGE GALLERY =====
-        function initializeGallery() {
-            galleryClose.addEventListener('click', function() {
-                closeGallery();
-            });
-
-            document.querySelector('.gallery-prev').addEventListener('click', function() {
-                navigateGallery(-1);
-            });
-
-            document.querySelector('.gallery-next').addEventListener('click', function() {
-                navigateGallery(1);
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (galleryModal.style.display === 'block') {
-                    switch(e.key) {
-                        case 'Escape':
-                            closeGallery();
-                            break;
-                        case 'ArrowLeft':
-                            navigateGallery(-1);
-                            break;
-                        case 'ArrowRight':
-                            navigateGallery(1);
-                            break;
-                    }
-                }
-            });
-
-            galleryModal.addEventListener('click', function(e) {
-                if (e.target === galleryModal) {
-                    closeGallery();
-                }
-            });
-        }
-
-        function openGallery(title, images) {
-            currentGalleryImages = images;
-            currentImageIndex = 0;
-            
-            document.getElementById('gallery-title').textContent = title;
-            updateGalleryImage();
-            
-            galleryModal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            galleryModal.setAttribute('aria-hidden', 'false');
-        }
-
-        function closeGallery() {
-            galleryModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-            galleryModal.setAttribute('aria-hidden', 'true');
-            currentGalleryImages = [];
-            currentImageIndex = 0;
-        }
-
-        function navigateGallery(direction) {
-            if (currentGalleryImages.length === 0) return;
-            
-            currentImageIndex += direction;
-            
-            if (currentImageIndex >= currentGalleryImages.length) {
-                currentImageIndex = 0;
-            } else if (currentImageIndex < 0) {
-                currentImageIndex = currentGalleryImages.length - 1;
-            }
-            
-            updateGalleryImage();
-        }
-
-        function updateGalleryImage() {
-            if (currentGalleryImages.length === 0) return;
-            
-            const galleryImage = document.getElementById('gallery-image');
-            const currentImage = currentGalleryImages[currentImageIndex];
-            
-            galleryImage.style.opacity = '0.5';
-            
-            const img = new Image();
-            img.onload = function() {
-                galleryImage.src = currentImage;
-                galleryImage.alt = `Gallery image ${currentImageIndex + 1} of ${currentGalleryImages.length}`;
-                galleryImage.style.opacity = '1';
-            };
-            img.onerror = function() {
-                galleryImage.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9IjAuM2VtIj5JbWFnZSBub3QgYXZhaWxhYmxlPC90ZXh0Pjwvc3ZnPg==';
-                galleryImage.alt = 'Image not available';
-                galleryImage.style.opacity = '1';
-            };
-            img.src = currentImage;
-        }
-
-        // ===== MODALS =====
-        function initializeModals() {
-            closeModalBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const modal = this.closest('.modal');
-                    closeModal(modal);
-                });
-            });
-            
-            [categoryModal, subcategoryModal].forEach(modal => {
-                if (modal) {
-                    modal.addEventListener('click', function(e) {
-                        if (e.target === modal) {
-                            closeModal(modal);
-                        }
-                    });
-                }
-            });
-            
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeModal(categoryModal);
-                    closeModal(subcategoryModal);
-                    closeGallery();
-                    const successModal = document.querySelector('.success-modal');
-                    if (successModal) {
-                        successModal.remove();
-                        document.body.style.overflow = 'auto';
-                    }
-                }
-            });
-        }
-
-        function closeModal(modal) {
-            if (modal && modal.style.display === 'block') {
-                const modalContent = modal.querySelector('.modal-content');
-                modalContent.style.transform = 'translateY(-50px) scale(0.9)';
-                modalContent.style.opacity = '0';
-                
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                    modal.setAttribute('aria-hidden', 'true');
-                    modalContent.style.transform = 'translateY(0) scale(1)';
-                    modalContent.style.opacity = '1';
-                }, 300);
-            }
-        }
-
-        // ===== RESIZE HANDLER =====
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                navMenu.classList.remove('active');
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                const icon = mobileMenuToggle.querySelector('i');
-                icon.className = 'fas fa-bars';
-            }
-        });
-
-        // ===== ERROR HANDLING =====
-        window.addEventListener('error', function(e) {
-            console.error('An error occurred:', e.error);
         });
     </script>
 </body>
